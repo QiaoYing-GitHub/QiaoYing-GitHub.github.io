@@ -506,3 +506,13 @@ footer {
   font-size: 10px;
   margin-left: 25px;
 }
+.else a:hover {
+  color: #fff;
+}
+.footer-top a:hover{
+  color: #fff;
+}
+
+.icon a .fa-brands:hover{
+  color: #fff;
+}
