@@ -231,7 +231,7 @@ button a {
 
 }
 
-.wrap .main-title  {
+.wrap .main-title {
   width: 500px;
   margin-bottom: 16px;
 }
@@ -270,11 +270,13 @@ button a {
 .apply_btn a {
   font-size: 20px;
 }
-.color-block-top{
+
+.color-block-top {
   position: absolute;
   top: 80px;
   left: 0;
 }
+
 .color-block-bottom {
   position: absolute;
   bottom: 0;
