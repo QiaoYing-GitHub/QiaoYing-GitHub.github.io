@@ -198,7 +198,7 @@ button {
   height: 45px;
 }
 
-.download_btn :hover {
+.button :hover {
   background-color: rgb(48, 226, 48);
   border: 0;
   background-color: none;
