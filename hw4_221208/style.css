@@ -1,0 +1,302 @@
+body {
+  line-height: 1.5;
+  font-family: 'Noto Sans TC',
+    'Roboto',
+    -apple-system,
+    'Avenir Next',
+    'Microsoft JhengHei',
+    '微軟正黑體';
+  ;
+}
+
+section{
+  padding: 100px 0;
+}
+.template1-content {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.template1 .main-paragraph {
+  width: 355px;
+  position: relative;
+  z-index: 5;
+}
+
+.template1 .main-paragraph .title {
+  background-color: #BB0404;
+  display: flex;
+  align-items: center;
+}
+
+.template1 .main-paragraph .title .num {
+  color: #fff;
+  writing-mode: vertical-rl;
+  font-size: 120px;
+  line-height: 90px;
+  font-weight: lighter;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.template1 .main-paragraph .title h3 {
+  font-size: 52px;
+  color: #fff;
+  margin-left: 40px;
+  font-weight: 100;
+}
+
+.template1 .main-paragraph .paragraph-text p {
+  color: #fff;
+}
+
+.template1 .paragraph-text {
+  background-color: black;
+  padding: 20px 20px 30px 20px;
+}
+
+.template1 .paragraph-text .slogan {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.template1 .paragraph-text .text {
+  font-size: 19px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+/* ------------------- */
+
+.template1 .description {
+  background-color: #EEEEEE;
+  width: 680px;
+  padding: 20px;
+  position: relative;
+  z-index: 4;
+  left: 50px;
+  margin-top: 200px;
+}
+
+.template1 .description .innovation {
+  color: #BB0404;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+}
+
+.template1 .description .innovation:after {
+  content: '';
+  height: 1px;
+  background-color: #BB0404;
+  display: block;
+  flex-grow: 1;
+  margin-left: 5px;
+}
+
+.template1 .description .item {
+  margin: 5px 0;
+}
+
+.template1 .description .item h4 {
+  background-color: black;
+  color: #fff;
+  margin: 5px 0;
+  width: fit-content;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.template1 .description .item p {
+  color: rgb(72, 72, 72);
+  margin-left: 10px;
+}
+
+.template1 .description .item p:before {
+  content: "▪";
+    color: #bb0404;
+    font-weight: bold;
+    margin-left: -10px;
+}
+
+/* --------------------------- */
+.template1 .color-block {
+  width: 440px;
+  height: 290px;
+  background-color: #F3F3F3;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  z-index: 1;
+}
+
+/* -------------------- */
+.template1 .main-pic {
+  width: 695px;
+}
+
+/* -------------------- */
+.template1 .play-pic {
+  width: 55px;
+  position: relative;
+  left: -45px;
+  bottom: 195px;
+}
+
+/* ------------- */
+.template1 .pic {
+  position: absolute;
+  top: 133px;
+  left: 180px;
+  z-index: 3;
+}
+
+/* TEMPLATE2---------------------- */
+.template2-content {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.template2 .main-paragraph {
+  width: 355px;
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  top: -134px;
+}
+
+.template2 .main-paragraph .title {
+  background-color: #BB0404;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.template2 .main-paragraph .title .num {
+  color: #fff;
+  writing-mode: vertical-rl;
+  font-size: 120px;
+  line-height: 90px;
+  font-weight: lighter;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.template2 .main-paragraph .title h3 {
+  font-size: 52px;
+  color: #fff;
+  margin-left: 40px;
+  font-weight: 100;
+  margin-right:15px;
+}
+
+.template2 .main-paragraph .paragraph-text p {
+  color: #fff;
+}
+
+.template2 .paragraph-text {
+  background-color: black;
+  padding: 20px 20px 30px 20px;
+}
+
+.template2 .paragraph-text .slogan {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.template2 .paragraph-text .text {
+  font-size: 19px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+/* ------------------- */
+
+.template2 .description {
+  background-color: #EEEEEE;
+  width: 680px;
+  padding: 20px;
+  position: relative;
+  z-index: 4;
+  top: -40px;
+  left: 270px;
+}
+
+.template2 .description .innovation {
+  color: #BB0404;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+}
+
+.template2 .description .innovation:after {
+  content: '';
+  height: 1px;
+  background-color: #BB0404;
+  display: block;
+  flex-grow: 1;
+  margin-left: 5px;
+}
+
+.template2 .description .item {
+  margin: 5px 0;
+}
+
+.template2 .description .item h4 {
+  background-color: black;
+  color: #fff;
+  margin: 5px 0;
+  width: fit-content;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.template2 .description .item p {
+  color: rgb(72, 72, 72);
+  margin-left: 10px;
+}
+
+.template2 .description .item p:before {
+  content: "▪";
+  color: #bb0404;
+  font-weight: bold;
+  margin-left: -10px;
+}
+
+/* --------------------------- */
+.template2 .color-block {
+  width: 515px;
+  height: 415px;
+  background-color: #F3F3F3;
+  position: absolute;
+  top: -75px;
+  left: 270px;
+  z-index: 1;
+}
+
+/* -------------------- */
+.template2 .main-pic {
+  width: 695px;
+  position: relative;
+  left: -45px;
+}
+
+/* -------------------- */
+.template2 .play-pic {
+  width: 55px;
+  position: relative;
+  bottom: 195px;
+  z-index: 3;
+}
+
+/* ------------- */
+.template2 .pic {
+  position: relative;
+  z-index: 3;
+}
