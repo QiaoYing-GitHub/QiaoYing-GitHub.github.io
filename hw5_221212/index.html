@@ -1,12 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .item {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      margin: 10px;
+      align-items: center;
+    }
+
+    .item img {
+      width: 50%;
+      vertical-align: top;
+      padding-right: 5px;
+    }
+
+    .item p {
+      width: 50%;
+
+    }
+
+    @media screen and ((min-width: 768px)) {
+      .item {
+        flex-wrap: wrap;
+        width: 33.3333%;
+      }
+
+      .item :nth-child(n) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media screen and ((min-width: 1200px)) {
+      .item {
+        width: 25%;
+        margin: 10px 0;
+      }
+      .item:nth-child(-n+2) {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 50%;
+        padding: 0 15px;
+      }
+      .item:nth-child(-n+2) img {
+        width: 50%;
+      }
+      .item:nth-child(-n+2) p{
+        width: 50%;
+      }
+      .item:not(:nth-child(-n+2)) img{
+        padding: 0 15px;
+        box-sizing: border-box;
+      }
+      .item:not(:nth-child(-n+2)){
+        position: relative;
+      }
+      .item:not(:nth-child(-n+2)) p{
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        left: 15px;
+        background-color: #0008;
+        color:#fff;
+        opacity: 0;
+        transition: 1s;
+        display: flex;
+        align-items: center;
+        width: calc(100% - 30px);
+
+      }
+
+      .item:not(:nth-child(-n+2)):hover p {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  
+  <div class="wrap">
+    <div class="item">
+      <img src="https://picsum.photos/300/200/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestiae iure!</p>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/300/200/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestiae iure!</p>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/300/200/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestiae iure!</p>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/300/200/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestiae iure!</p>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/300/200/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestiae iure!</p>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/300/200/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestiae iure!</p>
+    </div>
+  </div>
 </body>
+
 </html>
