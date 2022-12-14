@@ -43,6 +43,9 @@
       .item {
         flex-wrap: wrap;
         width: 33.3333%;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
       }
 
       .item :nth-child(n) {
@@ -55,33 +58,42 @@
       .item {
         width: 25%;
         margin: 10px 0;
+        padding: 0;
       }
+
       .item:nth-child(-n+2) {
         display: flex;
         flex-wrap: nowrap;
         width: 50%;
-        padding: 0 15px;
+        
       }
+
       .item:nth-child(-n+2) img {
         width: 50%;
-      }
-      .item:nth-child(-n+2) p{
-        width: 50%;
-      }
-      .item:not(:nth-child(-n+2)) img{
         padding: 0 15px;
         box-sizing: border-box;
       }
-      .item:not(:nth-child(-n+2)){
+
+      .item:nth-child(-n+2) p {
+        width: 50%;
+      }
+
+      .item:not(:nth-child(-n+2)) img {
+        padding: 0 15px;
+        box-sizing: border-box;
+      }
+
+      .item:not(:nth-child(-n+2)) {
         position: relative;
       }
-      .item:not(:nth-child(-n+2)) p{
+
+      .item:not(:nth-child(-n+2)) p {
         position: absolute;
         top: 0px;
         bottom: 0;
         left: 15px;
         background-color: #0008;
-        color:#fff;
+        color: #fff;
         opacity: 0;
         transition: 1s;
         display: flex;
