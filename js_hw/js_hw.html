@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    body {
+      background-color: hsl(0, 0%, 75%);
+    }
+
+    .container {
+      width: 400px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      background-color: #4a4a4a;
+      border-radius: 30px;
+      padding: 20px;
+      margin-top: 15px;
+      box-shadow: 0 0 20px 10px rgba(114, 114, 114, 0.4);
+
+    }
+
+    .wrap {
+      background-color: #fff;
+      width: 100%;
+      border-radius: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      box-shadow: 0 0 20px 10px rgba(44, 44, 44, 0.4);
+    }
+
+    .wrap button {
+      width: 80px;
+      height: 80px;
+      background-color: hsl(0, 0%, 75%);
+
+    }
+
+    input {
+      width: 70%;
+      display: inline-block;
+      height: 90px;
+      border-radius: 50px;
+      border: none;
+      font-size: 35px;
+      padding: 10px;
+      box-sizing: border-box;
+
+    }
+
+    .range {
+      width: 100%;
+      color: hsl(0, 0%, 75%);
+      margin: 10px;
+      margin-left: 20px;
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 5px;
+    }
+
+    button {
+      border: none;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      background-color: #4a4a4a;
+      color: #fff;
+      margin: 10px;
+      font-size: 20px;
+
+    }
+
+    .btn .clear,
+    .btn .reset {
+      color: hsl(0, 0%, 75%);
+    }
+
+    .btn .clear:hover,
+    .btn .reset:hover {
+      background-color: rgb(139, 139, 139);
+      color: black;
+    }
+
+    button:hover {
+      background-color: rgb(139, 139, 139);
+      color: black;
+    }
+
+    .btn {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <p class="range">1 ~ 100</p>
+    <div class="wrap">
+      <input readonly type="text" id="num-input">
+      <button onclick="guess()">Enter</button>
+    </div>
+
+    <div class="btn">
+      <button class="num" onclick="numHandler(this)">1</button>
+      <button class="num" onclick="numHandler(this)">2</button>
+      <button class="num" onclick="numHandler(this)">3</button>
+      <button class="num" onclick="numHandler(this)">4</button>
+      <button class="num" onclick="numHandler(this)">5</button>
+      <button class="num" onclick="numHandler(this)">6</button>
+      <button class="num" onclick="numHandler(this)">7</button>
+      <button class="num" onclick="numHandler(this)">8</button>
+      <button class="num" onclick="numHandler(this)">9</button>
+      <button class="clear" onclick="clear_btn()">Clean</button>
+      <button class="num" onclick="numHandler(this)">0</button>
+
+
+      <button class="reset" onclick="gamestart()">Again</button>
+    </div>
+
+  </div>
+
+
+  <script>
+    // 變數宣告
+    let min
+    let max
+    let random
+
+    //DOM宣告
+    let myInput = document.querySelector('#num-input')
+    let range = document.querySelector('.range')
+
+    function clear_btn() {
+      myInput.value = ' ';
+    }
+    function gamestart() {
+      min = 1;
+      max = 100;
+      random = Math.floor(Math.random() * (100 - 1) + 1);
+
+      range.innerText = min + '~' + max;
+      myInput.value = '';
+    }
+
+    function guess() {
+      console.log(myInput.value);
+      let tmp = parseInt(myInput.value);
+      console.log(parseFloat(myInput.value));
+
+      if (tmp >= max || tmp <= min) {
+        alert('請輸入範圍內的數字')
+        myInput.value = '';
+        return
+      }
+      else if (tmp > random) {
+        max = tmp;
+        range.innerText = min + '~' + max;
+        myInput.value = '';
+      }
+      else if (tmp < random) {
+        min = tmp;
+        range.innerText = min + '~' + max;
+        console.log(range.innerText);
+        myInput.value = '';
+      }
+      else if (tmp == random) {
+        range.innerText = "猜對了，答案是" + random;
+        console.log(range.innerText);
+        myInput.value = '';
+      }
+    }
+
+    function numHandler(btn) {
+      myInput.value += btn.innerText
+    }
+
+    //window.onload
+    window.onload = function () {
+      gamestart()
+    }
+
+    //function
+
+    // myBtn.addEventListener('click', function () {
+    //   console.log(myInput.value)
+    //   let tmp = parseInt(myInput.value)
+    //   console.log(parseFloat(myInput.value))
+
+    //   remind.innerText = ""
+    //   if (tmp > random) {
+
+    //     max = tmp
+    //     range.innerText = min + '~' + max
+    //   }
+    //   else if (tmp < random) {
+    //     min = tmp
+    //     range.innerText = min + '~' + max
+    //     console.log(range.innerText)
+    //   }
+    //   else if (tmp == random) {
+    //     range.innerText = "猜對了"
+    //     console.log(range.innerText)
+    //   }
+
+    // }
+
+    //)
+  </script>
+</body>
+
+</html>
