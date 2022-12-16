@@ -164,7 +164,7 @@
       let tmp = parseInt(myInput.value);
       console.log(parseFloat(myInput.value));
 
-      if (tmp >= max || tmp <= min) {
+      if (tmp > max || tmp < min) {
         alert('請輸入範圍內的數字')
         myInput.value = '';
         return
