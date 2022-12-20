@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./AltisGray">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .wrap{
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    h1{
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    .container{
+      
+      display: flex;
+      align-items: center;
+      margin: 30px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>360度賞車</h1>
+  <div class="container">
+    <button class="previous"></button>
+    <div id="car-img"></div>
+    <button class="next"></button>
+  </div>
+  
+  </div>
+
+
+  <script>
+    let container;
+    let min = 1;
+    let max = 60;
+    let i;
+    let img;
+
+    window.onload = function () {
+      i = min;
+      carImg = document.getElementById("car-img");
+      let urlTemplate = `/AltisGray/360EXT_1_18_${i}.png`;
+      console.log(urlTemplate)
+      // 1.建立DOM元素
+      img = document.createElement("img");
+      // 2.設定src屬性
+      img.setAttribute("src", urlTemplate);
+      // 3.把img DOM元素加入carImg 中
+      carImg.appendChild(img);
+      setImg();
+
+    };
+
+    var previous = document.querySelector('.previous')
+    previous.onclick = function (event) {
+      if (i > min) {
+        i--;
+      }
+      else {
+        i = max;
+      }
+      setImg();
+    }
+
+    var next = document.querySelector('.next')
+    next.onclick = function (event) {
+      if (i < max) {
+        i++;
+      }
+      else {
+        i = min;
+      }
+      setImg();
+    }
+
+    function setImg() {
+      let urlTemplate = `/AltisGray/360EXT_1_18_${i}.png`;
+      img.setAttribute("src", urlTemplate);
+    }
+
+
+
+  </script>
+</body>
+
+</html>
