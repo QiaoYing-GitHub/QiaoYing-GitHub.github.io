@@ -11,50 +11,55 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./AltisGray">
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
-    .wrap{
+
+    .wrap {
       margin: 20px;
       display: flex;
       flex-wrap: wrap;
     }
-    h1{
+
+    h1 {
       display: block;
       width: 100%;
       text-align: center;
     }
-    .container{
-      
+
+    .container {
+
       display: flex;
       align-items: center;
       margin: 30px auto;
     }
-    .fa-solid{
+
+    .fa-solid {
       font-size: 50px;
     }
-    button{
+
+    button {
       border: none;
       background-color: #fff;
       color: rgb(142, 142, 142);
     }
-    button:nth-child(1){
+
+    button:nth-child(1) {
       transform: rotateY(180deg);
     }
-    
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <h1>360度賞車</h1>
-  <div class="container">
-    <button class="previous"><i class="fa-solid fa-rotate-left"></i></button>
-    <div id="car-img"></div>
-    <button class="next"><i class="fa-solid fa-rotate-left"></i></button>
-  </div>
-  
+    <div class="container">
+      <button class="previous"><i class="fa-solid fa-rotate-left"></i></button>
+      <div id="car-img"></div>
+      <button class="next"><i class="fa-solid fa-rotate-left"></i></button>
+    </div>
+
   </div>
 
 
@@ -103,7 +108,7 @@
     }
 
     function setImg() {
-      let urlTemplate = `/AltisGray/360EXT_1_18_${i}.png`;
+      let urlTemplate = `./AltisGray/360EXT_1_18_${i}.png`;
       img.setAttribute("src", urlTemplate);
     }
 
