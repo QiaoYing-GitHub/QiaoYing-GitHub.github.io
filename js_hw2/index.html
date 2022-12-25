@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./AltisGray">
   <style>
     *{
@@ -28,6 +31,18 @@
       align-items: center;
       margin: 30px auto;
     }
+    .fa-solid{
+      font-size: 50px;
+    }
+    button{
+      border: none;
+      background-color: #fff;
+      color: rgb(142, 142, 142);
+    }
+    button:nth-child(1){
+      transform: rotateY(180deg);
+    }
+    
   </style>
 </head>
 
@@ -35,9 +50,9 @@
   <div class="wrap">
     <h1>360度賞車</h1>
   <div class="container">
-    <button class="previous"></button>
+    <button class="previous"><i class="fa-solid fa-rotate-left"></i></button>
     <div id="car-img"></div>
-    <button class="next"></button>
+    <button class="next"><i class="fa-solid fa-rotate-left"></i></button>
   </div>
   
   </div>
