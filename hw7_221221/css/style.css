@@ -598,8 +598,6 @@ footer {
   .footer-content {
     width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
   }
 
   .main-header {
@@ -679,7 +677,7 @@ footer {
   }
 
   .content {
-    margin: auto 0;
+    padding: 30px;
     width: 50%;
     box-sizing: border-box;
   }
@@ -700,7 +698,7 @@ footer {
   }
 
   .btn-w {
-    width: 30%;
+    width: 50%;
   }
 
   .contact img {
