@@ -518,21 +518,22 @@ footer {
 }
 
 .footer-nav .item .title {
-  font-size: 30px;
+  font-size: 1%;
   margin-top: 30px;
 }
 
-.footer-nav .media {
+.footer-nav .media{
   margin: 30px 0;
 }
 
 .footer-nav .media a {
-  width: 20px;
-  height: 20px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
   box-sizing: border-box;
   border: 1px solid #b0b0b0;
   border-radius: 50%;
-  padding: 15px;
+  padding: 5px;
   margin: 5px;
   text-align: center;
   color: #bdbdbd;
@@ -904,11 +905,12 @@ footer {
 
   /* footer */
   .main-footer .footer-content{
-    width: 1200px;
+    width: 90%;
     box-sizing: border-box;
   }
 
   .main-footer .footer-content .footer-nav {
+    width: 100%;
     display: flex;
     margin-bottom: 50px;
     margin: 0;
