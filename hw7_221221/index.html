@@ -16,22 +16,41 @@
 
 <body>
   <header class="main-header" id="header">
-    <div class="header-logo">
-      <h1>
-        <img src="./img/logo.png" alt="maikon">
-      </h1>
+    <div class="header-wrap">
+      <div class="header-logo">
+        <h1>maikon
+          <a href="#"><img src="./img/logo.png" alt="maikon"></a>
+
+        </h1>
+      </div>
+      <input type="checkbox" id="nav-control">
+      <label for="nav-control" class="HB">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="xmark">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </label>
+
+      <nav class=" main-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Team</a>
+        <a href="#">Case studio</a>
+        <a href="#">Contacts</a>
+        <a href="#">SUBSCRIBE</a>
+      </nav>
+
+      <div class="up">
+        <a href="#kv"><i class="fa-solid fa-chevron-up"></i></a>
+      </div>
     </div>
-    <nav class=" main-nav">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Team</a>
-      <a href="#">Case studio</a>
-      <a href="#">Contacts</a>
-      <a href="#">SUBSCRIBE</a>
-    </nav>
+
+
   </header>
-  <section class="section-kv">
+  <section class="section-kv" id="kv">
     <img class="cloud" src="./img/cloud-1.svg" alt="">
     <img class="cloud" src="./img/cloud-2.svg" alt="">
     <div class="kv">
@@ -53,6 +72,7 @@
         <img src="./img/home-image-1.svg" alt="kv-img">
       </div>
     </div>
+
   </section>
   <section class="section-passion">
     <div class="passion">
@@ -78,7 +98,7 @@
   <section class="section-services">
     <img class="cloud" src="./img/cloud-3.svg" alt="">
     <img class="cloud" src="./img/cloud-4.svg" alt="">
-    <div class="services content">
+    <div class="services">
       <h2>We provide a wide range of creative services</h2>
       <ul>
         <li>
@@ -188,53 +208,67 @@
         <li class="step-item">
           <div class="text">
             <img src="./img/number-01.svg" alt="">
-            <h3>Meeting With The Customer</h3>
-            <p>The first meeting is very import to form contact and discuss the main ideas of the project.</p>
+            <div class="txt-wrap">
+              <h3>Meeting With The Customer</h3>
+              <p>The first meeting is very import to form contact and discuss the main ideas of the project.</p>
+            </div>
           </div>
           <div class="pic">
             <img src="./img/home-image-4.svg" alt="">
           </div>
         </li>
         <li class="step-item">
-          
+
           <div class="text">
             <img src="./img/number-02.svg" alt="">
-            <h3>We Consider And Analyze The Work Plan</h3>
-            <p>we understand the main eideas, we proceed to discussing the work plan and analyzing it.</p>
+            <div class="txt-wrap">
+              <h3>We Consider And Analyze The Work Plan</h3>
+              <p>we understand the main eideas, we proceed to discussing the work plan and analyzing it.</p>
+            </div>
+
           </div>
           <div class="pic">
             <img src="./img/home-image-5.svg" alt="">
           </div>
         </li>
         <li class="step-item">
-          
+
           <div class="text">
             <img src="./img/number-03.svg" alt="">
-            <h3>Work Hard On The Project</h3>
-            <p>Our professional team start to handle with your project and embody the conception of the project.</p>
+            <div class="txt-wrap">
+              <h3>Work Hard On The Project</h3>
+              <p>Our professional team start to handle with your project and embody the conception of the project.</p>
+            </div>
+
           </div>
           <div class="pic">
             <img src="./img/home-image-6.svg" alt="">
           </div>
         </li>
         <li class="step-item">
-          
+
           <div class="text">
             <img src="./img/number-04.svg" alt="">
-            <h3>Once Again We Analyze And Check Everything</h3>
-            <p>We meet, analyze and check the done work and make needed corrections.</p>
+            <div class="txt-wrap">
+              <h3>Once Again We Analyze And Check Everything</h3>
+              <p>We meet, analyze and check the done work and make needed corrections.</p>
+            </div>
+
           </div>
           <div class="pic">
             <img src="./img/home-image-7.svg" alt="">
           </div>
         </li>
         <li class="step-item">
-          
+
           <div class="text">
             <img src="./img/number-05.svg" alt="">
-            <h3>We Finish The Work And Give It To The Customer</h3>
-            <p>We Finish The Work And Give It To The Customer
-              The project is ready and we give it to the customer. Also we ask for the feedback from the customer.</p>
+            <div class="txt-wrap">
+              <h3>We Finish The Work And Give It To The Customer</h3>
+              <p>We Finish The Work And Give It To The Customer
+                The project is ready and we give it to the customer. Also we ask for the feedback from the customer.</p>
+            </div>
+
           </div>
           <div class="pic">
             <img src="./img/home-image-8.svg" alt="">
@@ -247,32 +281,36 @@
   <section class="section-projects">
     <img class="cloud" src="./img/cloud-13.svg" alt="">
     <div class="projects">
-      <h2>Our team's work with Projects</h2>
-      <a href="#" class="green-btn">ALL PROJECTS</a>
+      <div class="title">
+        <h2>Our team's work with Projects</h2>
+        <a href="#" class="green-btn">ALL PROJECTS</a>
+      </div>
       <div class="wrap">
         <div class="item">
           <div class="img-minimal"></div>
           <div class="hover-content">
-            <h3>Minimal Creative "Impuls"</h3>
-            <a href="#">VIEW SITE</a>
+            <div class="wrap">
+              <h3>Minimal Creative "Impuls"</h3>
+              <a href="#">VIEW SITE</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
         <div class="item">
           <div class="img-traval"></div>
           <div class="hover-content">
-            <h3>Travel Company "Tour Up"</h3>
-            <a href="#">VIEW SITE</a>
+            <div class="wrap">
+              <h3>Travel Company "Tour Up"</h3>
+              <a href="#">VIEW SITE</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
         <div class="item">
           <div class="img-restaurant"></div>
           <div class="hover-content">
-            <h3>Restaurant Pizza "Little Italy"</h3>
-            <a href="#">VIEW SITE</a>
+            <div class="wrap">
+              <h3>Restaurant Pizza "Little Italy"</h3>
+              <a href="#">VIEW SITE</a>
+            </div>
           </div>
         </div>
       </div>
@@ -288,7 +326,7 @@
         <h2>Sign up for our consultation</h2>
         <input type="text" placeholder="Name">
         <input type="email" id="" placeholder="Email">
-        <textarea name="" cols="40" rows="10" placeholder="Message"></textarea>
+        <textarea name="" cols="40" rows="5" placeholder="Message"></textarea>
         <a href="#" class="green-btn">SEND</a>
       </div>
     </div>
@@ -337,7 +375,7 @@
           <p>Join us in the social networks and keep up on the latest news.</p>
           <div class="media">
             <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
           </div>
@@ -345,11 +383,12 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <div class="text">Copyright © 2018 Wordpress Maikon. All Rights Reserved. | Theme design by <span>Zemez</span>
+        <div class="text">Copyright © 2018 Wordpress Maikon. All Rights Reserved. | Theme design by <span><a
+              href="#">Zemez</a></span>
         </div>
         <div class="link-text">
           <a href="#">Privacy & Policy</a>
-          <a href="#">FAQ</a>
+          <a href="#" class="faq">FAQ</a>
         </div>
       </div>
     </div>
