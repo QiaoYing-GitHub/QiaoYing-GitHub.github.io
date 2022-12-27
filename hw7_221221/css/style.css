@@ -14,6 +14,7 @@ p {
 }
 
 section {
+  width: 100%;
   margin: 50px 0;
 }
 
@@ -39,7 +40,9 @@ section {
   box-shadow: 0px 8px 32px 0px rgb(31 222 130 / 46%);
 
 }
-
+.green-btn a{
+  font-size: 15px;
+}
 .green-btn:hover {
   background-color: #5D6678;
   box-shadow: none
