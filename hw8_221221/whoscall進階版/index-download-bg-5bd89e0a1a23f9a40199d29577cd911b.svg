@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="240" viewBox="0 0 1440 240">
+    <defs>
+        <filter id="prefix__b" width="102.2%" height="113.3%" x="-1.1%" y="-5.8%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+        </filter>
+        <path id="prefix__a" d="M0 0H1440V240H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="prefix__c" fill="#fff">
+            <use xlink:href="#prefix__a"/>
+        </mask>
+        <use fill="#000" filter="url(#prefix__b)" xlink:href="#prefix__a"/>
+        <use fill="#00C300" xlink:href="#prefix__a"/>
+        <path fill="#FFF" d="M951 -526L1775.189 -484.811 1849.729 1006.729 1025.54 965.54z" mask="url(#prefix__c)" opacity=".185" transform="rotate(45 1400.365 240.365)"/>
+        <path fill="#97F597" d="M1151.5 127c22.92 0 41.5 18.58 41.5 41.5s-18.58 41.5-41.5 41.5h-115.758L1012 226v-16h-6.5c-22.92 0-41.5-18.58-41.5-41.5s18.58-41.5 41.5-41.5h146z" mask="url(#prefix__c)" opacity=".601"/>
+        <path fill="#01B401" d="M584-87c53.572 0 97 43.428 97 97s-43.428 97-97 97H315.282L259 144v-37h-14c-53.572 0-97-43.428-97-97s43.428-97 97-97h339z" mask="url(#prefix__c)" opacity=".601" transform="matrix(-1 0 0 1 829 0)"/>
+    </g>
+</svg>
