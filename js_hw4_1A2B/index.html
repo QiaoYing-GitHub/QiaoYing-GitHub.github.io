@@ -232,6 +232,7 @@
       input.value = ""
       input.removeAttribute('disabled')
       answer.removeAttribute('disabled')
+      guess.removeAttribute('disabled')
     })
     // 看答案按鍵
     answer.addEventListener('click', function () {
@@ -240,6 +241,7 @@
       list.appendChild(li)
       input.setAttribute('disabled', 'true');
       answer.setAttribute('disabled', 'true');
+      guess.setAttribute('disabled', 'true');
       input.value = ""
     })
   </script>
