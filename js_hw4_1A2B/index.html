@@ -101,7 +101,7 @@
     <div class="input-group mb-">
       <input disabled type="number" class="form-control" placeholder="請輸入四個不同的數字" aria-label="Recipient's username"
         aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary guess" type="button" id="button-addon2">猜</button>
+      <button disabled class="btn btn-outline-secondary guess" type="button" id="button-addon2">猜</button>
     </div>
   </div>
 
@@ -213,6 +213,7 @@
       input.removeAttribute('disabled')
       again.removeAttribute('disabled')
       answer.removeAttribute('disabled')
+      guess.removeAttribute('disabled')
       list.innerHTML = `<li li class="list-group-item first-li" > 開始囉!</li>`
       input.value = ""
       first_li.innerText = `開始囉!`
