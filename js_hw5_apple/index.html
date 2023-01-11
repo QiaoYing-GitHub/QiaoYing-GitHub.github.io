@@ -36,27 +36,7 @@
       padding: 50px;
     }
 
-    .red {
-      width: 50px;
-      height: 50px;
-      border-radius: 50px;
-      background-color: rgb(255, 103, 103);
-    }
-
-    .yellow {
-      width: 50px;
-      height: 50px;
-      border-radius: 50px;
-      background-color: rgb(254, 254, 102);
-    }
-
-    .black {
-      width: 50px;
-      height: 50px;
-      border-radius: 50px;
-      background-color: #2d2d2d;
-    }
-
+    
     .color {
       width: 100%;
       display: flex;
@@ -102,7 +82,7 @@
 <body>
   <div class="container">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary iPhone">iPhone</button>
+      <button type="button" class="btn btn-secondary iPhone">iPhone 14 Pro</button>
       <button type="button" class="btn btn-secondary iPad">iPad</button>
       <button type="button" class="btn btn-secondary MacBook">MacBook</button>
     </div>
@@ -126,27 +106,181 @@
       </div>
     </div>
     <script>
-      let appleArray = [
-        { "type": "ipadair", "color": "spacegray", "storage": "32GB", "network": "Wi-Fi", "price": 10900 },
-        { "type": "ipadair", "color": "silver", "storage": "32GB", "network": "Wi-Fi", "price": 10900 },
-        { "type": "ipadair", "color": "gold", "storage": "32GB", "network": "Wi-Fi", "price": 10900 },
-        { "type": "ipadair", "color": "spacegray", "storage": "128GB", "network": "Wi-Fi", "price": 13900 },
-        { "type": "ipadair", "color": "silver", "storage": "128GB", "network": "Wi-Fi", "price": 13900 },
-        { "type": "ipadair", "color": "gold", "storage": "128GB", "network": "Wi-Fi", "price": 13900 }
-      ]
+      let iPhone = {
+        "黑色": {
+          "deviceImg": "./img/iphone/iphone-14-pro-storage-select-202209-6-1inch-spaceblack.jfif",
+          "colorImg": "./img/iphone/iphone-pro-finish-spaceblack-2022.jfif",
+          "storage": [
+            {
+              "大小": "128GB",
+              "價格": 34900
+            },
+            {
+              "大小": "256GB",
+              "價格": 38400
+            },
+            {
+              "大小": "512GB",
+              "價格": 45400
+            },
+            {
+              "大小": "1TB",
+              "價格": 52400
+            }
+          ]
+        },
+        "金色": {
+          "deviceImg": "./img/iphone/iphone-14-pro-finish-select-202209-6-1inch-gold.jfif",
+          "colorImg": "./img/iphone/iphone-pro-finish-gold-2022.jfif",
+          "storage": [
+            {
+              "大小": "128GB",
+              "價格": 34900
+            },
+            {
+              "大小": "256GB",
+              "價格": 38400
+            },
+            {
+              "大小": "512GB",
+              "價格": 45400
+            },
+            {
+              "大小": "1TB",
+              "價格": 52400
+            }
+          ]
+        },
+        "銀色": {
+          "deviceImg": "./img/iphone/iphone-14-pro-finish-select-202209-6-1inch-silver.jfif",
+          "colorImg": "./img/iphone/iphone-pro-finish-silver-2022.jfif",
+          "storage": [
+            {
+              "大小": "128GB",
+              "價格": 34900
+            },
+            {
+              "大小": "256GB",
+              "價格": 38400
+            },
+            {
+              "大小": "512GB",
+              "價格": 45400
+            },
+            {
+              "大小": "1TB",
+              "價格": 52400
+            }
+          ]
+        },
+        "深紫色": {
+          "deviceImg": "./img/iphone/iphone-14-pro-storage-select-202209-6-1inch-deeppurple.jfif",
+          "colorImg": "./img/iphone/iphone-pro-finish-deeppurple-2022.jfif",
+          "storage": [
+            {
+              "大小": "128GB",
+              "價格": 34900
+            },
+            {
+              "大小": "256GB",
+              "價格": 38400
+            },
+            {
+              "大小": "512GB",
+              "價格": 45400
+            },
+            {
+              "大小": "1TB",
+              "價格": 52400
+            }
+          ]
+        },
 
-      let iPhone = [
-        { "color": "紅色", "storage": "65GB", "price": 24900, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "紅色", "storage": "128GB", "price": 26900, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "紅色", "storage": "256GB", "price": 30400, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "黃色", "storage": "65GB", "price": 24900, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "黃色", "storage": "128GB", "price": 26900, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "黃色", "storage": "256GB", "price": 30400, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "黑色", "storage": "65GB", "price": 24900, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "黑色", "storage": "128GB", "price": 26900, url: "./img/iphone11-select-2019-family.png" },
-        { "color": "黑色", "storage": "256GB", "price": 30400, url: "./img/iphone11-select-2019-family.png" }
-      ]
+      }
+      let iPad = {
+        "黃色": {
+          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-yellow.jfif",
+          "colorImg": "./img/ipad/ipad-10th-gen-finish-yellow-2022.png",
+          "storage": [
+            {
+              "大小": "64GB",
+              "價格": 14900
+            },
+            {
+              "大小": "256GB",
+              "價格": 19900
+            }
+          ]
+        },
+        "粉紅色": {
+          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-pink.jfif",
+          "colorImg": "./img/ipad/ipad-10th-gen-finish-pink-2022.png",
+          "storage": [
+            {
+              "大小": "64GB",
+              "價格": 14900
+            },
+            {
+              "大小": "256GB",
+              "價格": 19900
+            }
+          ]
+        },
+        "藍色": {
+          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-blue.jfif",
+          "colorImg": "./img/ipad/ipad-10th-gen-finish-blue-2022.png",
+          "storage": [
+            {
+              "大小": "64GB",
+              "價格": 14900
+            },
+            {
+              "大小": "256GB",
+              "價格": 19900
+            }
+          ]
+        },
+        "銀色": {
+          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-silver.jfif",
+          "colorImg": "./img/ipad/ipad-10th-gen-finish-silver-2022.png",
+          "storage": [
+            {
+              "大小": "64GB",
+              "價格": 14900
+            },
+            {
+              "大小": "256GB",
+              "價格": 19900
+            }
+          ]
+        },
+      }
+      let macbook = {
+        "黑色": {
+          "deviceImg": "./img/iphone/iphone-14-pro-storage-select-202209-6-1inch-spaceblack.jfif",
+          "colorImg": "./img/iphone/iphone-pro-finish-spaceblack-2022.jfif",
+          "storage": [
+            {
+              "大小": "256GB",
+              "價格": 37900
+            },
+            {
+              "大小": "512GB",
+              "價格": 43900
+            },
+            {
+              "大小": "1TB",
+              "價格": 49900
+            },
+            {
+              "大小": "2TB",
+              "價格": 61900
+            }
+          ]
+        },
+      }
 
+      // 抓DOM
       let main_pic = document.querySelector(".wrap .img");
       let content_color = document.querySelector(".content .color")
       let item = document.createElement('div')
@@ -154,12 +288,17 @@
 
       let color_block = document.createElement('div');
       color_block.classList.add('color_block')
+      iPhone.forEach(element => {
+        
+      });
+      let colorImg=document.createElement('img')
 
       let color_text = document.createElement('div');
-  iPhone.filter(item =>{
-    color_text.innerText=item.color
-  })
-  console.log(color_text);
+      iPhone.filter(item => {
+        color_text.innerText = item.color
+      })
+
+      console.log(color_text);
       content_color.appendChild(item)
       content_color.appendChild(color_block)
       item.appendChild(color_text)
