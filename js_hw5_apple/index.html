@@ -10,304 +10,309 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/normalize.css">
   <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
     .btn-group {
       display: flex;
       justify-content: center;
     }
 
-    .container {
-      width: 90%;
+    button {
+      display: inline-block;
+      padding: 0;
+      border: 0;
     }
 
-    .wrap {
-      display: flex;
-    }
-
-    .img {
-      width: 50%;
-      vertical-align: middle;
-      display: flex;
-      justify-content: center;
-
-    }
-
-    .content {
-      width: 50%;
-      padding: 50px;
-    }
-
-    
     .color {
-      width: 100%;
-      display: flex;
-      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #f00;
+      border: 2px #0000 solid;
+      border-radius: 50%;
     }
 
-    .Specification {
-      display: flex;
+    .specification {
+      border: 2px #0000 solid;
+      background-color: #fff;
+      border: 1px solid #cbcbcb;
     }
 
-    .item {
-      border: 1px solid #a9a9a9;
-      margin: 20px;
-      padding: 30px;
-      width: 33.333333%;
-      border-radius: 10px;
-      box-sizing: border-box;
-      justify-content: center;
-      display: flex;
-      flex-wrap: wrap;
+    .color:focus {
+      
+      position: relative;
+      bottom: 5px;
     }
 
-    .color-text {
-      display: block;
-      margin-top: 5px;
+    .specification:focus {
+      border: 2px rgba(54, 54, 53, 0.559) solid;
     }
 
-    .price-num {
-      font-size: 30px;
-    }
-
-    .capacity {
-      font-weight: bold;
-    }
-
-    .title {
-      font-weight: bold;
-      color: #2d2d2d;
-    }
+  
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary iPhone">iPhone 14 Pro</button>
-      <button type="button" class="btn btn-secondary iPad">iPad</button>
-      <button type="button" class="btn btn-secondary MacBook">MacBook</button>
+      <button type="button" class="btn btn-dark iPhone page_btn " data-page="iPhone">iPhone</button>
+      <button type="button" class="btn btn-dark iPad page_btn" data-page="iPad">iPad</button>
+      <button type="button" class="btn btn-dark MacBook page_btn" data-page="MacBook">MacBook</button>
     </div>
-    <div class="wrap">
-      <div class="img">
-        <img src="./img/iphone11-select-2019-family.png" alt="">
-      </div>
-      <div class="content">
-        <h2 class="title">顏色</h2>
-        <div class="color">
-        </div>
-        <h2 class="title">規格</h2>
-        <div class="Specification">
-          <div class="item">
-            <div class="capacity">64GB</div>
-            <div class="price">NT$24900</div>
+    <div class="row">
+      <div class="kv-pic mt-5 col-12 col-md-6">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/iphone/iphone-14-pro-model-unselect-gallery-1-202209.jfif" class="d-block w-100"
+                alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/iphone/iphone-14-pro-finish-select-202209-6-1inch.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/iphone/iphone-14-pro-finish-select-202209-6-1inch_AV3.jfif" class="d-block w-100"
+                alt="...">
+            </div>
           </div>
-          <h2 class="title">價格試算</h2>
-          <div class="price-num">NT$34000</div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
-    </div>
-    <script>
-      let iPhone = {
-        "黑色": {
-          "deviceImg": "./img/iphone/iphone-14-pro-storage-select-202209-6-1inch-spaceblack.jfif",
-          "colorImg": "./img/iphone/iphone-pro-finish-spaceblack-2022.jfif",
-          "storage": [
-            {
-              "大小": "128GB",
-              "價格": 34900
-            },
-            {
-              "大小": "256GB",
-              "價格": 38400
-            },
-            {
-              "大小": "512GB",
-              "價格": 45400
-            },
-            {
-              "大小": "1TB",
-              "價格": 52400
-            }
-          ]
-        },
-        "金色": {
-          "deviceImg": "./img/iphone/iphone-14-pro-finish-select-202209-6-1inch-gold.jfif",
-          "colorImg": "./img/iphone/iphone-pro-finish-gold-2022.jfif",
-          "storage": [
-            {
-              "大小": "128GB",
-              "價格": 34900
-            },
-            {
-              "大小": "256GB",
-              "價格": 38400
-            },
-            {
-              "大小": "512GB",
-              "價格": 45400
-            },
-            {
-              "大小": "1TB",
-              "價格": 52400
-            }
-          ]
-        },
-        "銀色": {
-          "deviceImg": "./img/iphone/iphone-14-pro-finish-select-202209-6-1inch-silver.jfif",
-          "colorImg": "./img/iphone/iphone-pro-finish-silver-2022.jfif",
-          "storage": [
-            {
-              "大小": "128GB",
-              "價格": 34900
-            },
-            {
-              "大小": "256GB",
-              "價格": 38400
-            },
-            {
-              "大小": "512GB",
-              "價格": 45400
-            },
-            {
-              "大小": "1TB",
-              "價格": 52400
-            }
-          ]
-        },
-        "深紫色": {
-          "deviceImg": "./img/iphone/iphone-14-pro-storage-select-202209-6-1inch-deeppurple.jfif",
-          "colorImg": "./img/iphone/iphone-pro-finish-deeppurple-2022.jfif",
-          "storage": [
-            {
-              "大小": "128GB",
-              "價格": 34900
-            },
-            {
-              "大小": "256GB",
-              "價格": 38400
-            },
-            {
-              "大小": "512GB",
-              "價格": 45400
-            },
-            {
-              "大小": "1TB",
-              "價格": 52400
-            }
-          ]
-        },
-
-      }
-      let iPad = {
-        "黃色": {
-          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-yellow.jfif",
-          "colorImg": "./img/ipad/ipad-10th-gen-finish-yellow-2022.png",
-          "storage": [
-            {
-              "大小": "64GB",
-              "價格": 14900
-            },
-            {
-              "大小": "256GB",
-              "價格": 19900
-            }
-          ]
-        },
-        "粉紅色": {
-          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-pink.jfif",
-          "colorImg": "./img/ipad/ipad-10th-gen-finish-pink-2022.png",
-          "storage": [
-            {
-              "大小": "64GB",
-              "價格": 14900
-            },
-            {
-              "大小": "256GB",
-              "價格": 19900
-            }
-          ]
-        },
-        "藍色": {
-          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-blue.jfif",
-          "colorImg": "./img/ipad/ipad-10th-gen-finish-blue-2022.png",
-          "storage": [
-            {
-              "大小": "64GB",
-              "價格": 14900
-            },
-            {
-              "大小": "256GB",
-              "價格": 19900
-            }
-          ]
-        },
-        "銀色": {
-          "deviceImg": "./img/ipad/ipad-10th-gen-finish-select-202212-silver.jfif",
-          "colorImg": "./img/ipad/ipad-10th-gen-finish-silver-2022.png",
-          "storage": [
-            {
-              "大小": "64GB",
-              "價格": 14900
-            },
-            {
-              "大小": "256GB",
-              "價格": 19900
-            }
-          ]
-        },
-      }
-      let macbook = {
-        "黑色": {
-          "deviceImg": "./img/iphone/iphone-14-pro-storage-select-202209-6-1inch-spaceblack.jfif",
-          "colorImg": "./img/iphone/iphone-pro-finish-spaceblack-2022.jfif",
-          "storage": [
-            {
-              "大小": "256GB",
-              "價格": 37900
-            },
-            {
-              "大小": "512GB",
-              "價格": 43900
-            },
-            {
-              "大小": "1TB",
-              "價格": 49900
-            },
-            {
-              "大小": "2TB",
-              "價格": 61900
-            }
-          ]
-        },
-      }
-
-      // 抓DOM
-      let main_pic = document.querySelector(".wrap .img");
-      let content_color = document.querySelector(".content .color")
-      let item = document.createElement('div')
-      item.classList.add('item')
-
-      let color_block = document.createElement('div');
-      color_block.classList.add('color_block')
-      iPhone.forEach(element => {
-        
-      });
-      let colorImg=document.createElement('img')
-
-      let color_text = document.createElement('div');
-      iPhone.filter(item => {
-        color_text.innerText = item.color
-      })
-
-      console.log(color_text);
-      content_color.appendChild(item)
-      content_color.appendChild(color_block)
-      item.appendChild(color_text)
-      console.log(content_color);
-    </script>
-    <!-- JavaScript Bundle with Popper -->
+      <div class="text col-12 col-md-6">
+        <div class="color-text">
+          <h2 class=" mt-5">外觀。 挑選你喜愛的外觀。</h2>
+          <p>顏色</p>
+        </div>
+        <div class="d-flex  mt-0  color-block ">
+          <!-- <button class="color m-1"> </button>
+                              <button class="color m-1"> </button>
+                              <button class="color m-1"> </button> -->
+        </div>
+        <div class="specification-text">
+          <h2 class="mt-5">儲存裝置。 你需要多少儲存空間？</h2>
+        </div>
+        <div class="row mt-2  specification-block">
+          <!-- <button class="specification mt-4 d-flex justify-content-around p-3 col-12   rounded-pill ">
+                              <div class="capacity">64gb</div>
+                              <div class="price">12800</div>
+                          </button>
+                          <button class="specification mt-4 d-flex justify-content-around p-3 col-12   rounded-pill ">
+                              <div class="storage">64gb</div>
+                              <div class="price">12800</div>
+                          </button> -->
+        </div>
+        <div class="">
+          <h3 class="fs-3 text mt-5  mb-2 ">價格試算</h3>
+          <h4 class="fs-2 text ml-4 ms-5 display-price"></h4>
+        </div>
+      </div>
+    </div><!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"></script>
+    <script>
+      const appleData = [
+        {
+          productName: "iPhone",
+          kv_img: ["./img/iphone/iphone-14-pro-model-unselect-gallery-1-202209.jfif", "./img/iphone/iphone-14-pro-finish-select-202209-6-1inch.jfif", "./img/iphone/iphone-14-pro-finish-select-202209-6-1inch_AV3.jfif"],
+          color: [
+            { RGB: "#4A4947", url: ["./img/iphone/iphone-14-pro-finish-select-202209-6-1inch-spaceblack.jfif"] },
+            { RGB: "#F4E8CE", url: ["./img/iphone/iphone-14-pro-finish-select-202209-6-1inch-gold.jfif"] },
+            { RGB: "#F2F4F3", url: ["./img/iphone/iphone-14-pro-finish-select-202209-6-1inch-silver.jfif"] },
+            { RGB: "#696071", url: ["./img/iphone/iphone-14-pro-storage-select-202209-6-1inch-deeppurple.jfif"] }
+          ],
+          specification: [
+            { storage: "128GB", price: "34900" },
+            { storage: "256GB", price: "38400" },
+            { storage: "512GB", price: "45400" },
+            { storage: "1TB", price: " 52400" },
+          ]
+        },
+        {
+          productName: "iPad",
+          kv_img: ["./img/ipad/ipad-10th-gen-finish-unselect-gallery-1-202212.jfif", "./img/ipad/ipad-10th-gen-finish-unselect-gallery-2-202212.jfif", "./img/ipad/ipad-10th-gen-finish-unselect-gallery-3-202212.jfif"],
+          color: [
+            { RGB: "#F0D969", url: ["./img/ipad/ipad-10th-gen-finish-select-202212-yellow.jfif"] },
+            { RGB: "#DE6776", url: ["./img/ipad/ipad-10th-gen-finish-select-202212-pink.jfif"] },
+            { RGB: "#6780A3", url: ["./img/ipad/ipad-10th-gen-finish-select-202212-blue.jfif"] },
+            { RGB: "#E3E4E5", url: ["./img/ipad/ipad-10th-gen-finish-select-202212-silver.jfif"] }
+          ],
+          specification: [
+            { storage: "64GB", price: "14900" },
+            { storage: "256GB", price: "19900" }
+          ]
+        }, {
+          productName: "MacBook",
+          kv_img: ["./img/macbook/macbook-air-midnight-select-20220606.jfif", "./img/macbook/macbook-air-silver-select-20220606.jfif", "./img/macbook/macbook-air-spacegray-select-20220606.jfif", "./img/macbook/macbook-air-starlight-select-20220606.jfif"],
+          color: [
+            { RGB: "#2E3641", url: ["./img/macbook/macbook-air-midnight-select-20220606.jfif"] },
+            { RGB: "#E3E4E6", url: ["./img/macbook/macbook-air-silver-select-20220606.jfif"] },
+            { RGB: "#7D7E80", url: ["./img/macbook/macbook-air-spacegray-select-20220606.jfif"] },
+            { RGB: "#F0E5D3", url: ["./img/macbook/macbook-air-starlight-select-20220606.jfif"] }
+          ],
+          specification: [
+            { storage: "256GB", price: "37900" },
+            { storage: "512GB", price: "43900" },
+            { storage: "1TB", price: "49900" },
+            { storage: "2TB", price: "61900" }
+          ]
+        }]
+
+
+
+      let pageData = [];
+      //#endregion
+      //#region DOM
+      const page_Btns = document.querySelectorAll('.page_btn');
+      const carousel = document.querySelector('.carousel');
+      const color_Block = document.querySelector('.color-block');
+      const specification_Block = document.querySelector('.specification-block');
+      let price, specification, colorBtns, display, spec_btns;
+      //#endregion
+      //#region windowonload
+      window.onload = () => {
+        UpPage("iPhone");//初始化頁面 顯示IPhone
+        page_Btns.forEach(page_btn => page_btn.addEventListener('click', ChangePage));
+      };
+      //#endregion
+      //#region 函式
+      /**
+       * 描述 更換產品頁面
+       * @date 2022-12-30
+       * @param {any} e
+       * @returns {any}
+       */
+      function ChangePage(e) {
+        let pageStr = e.target.dataset.page;
+        UpPage(pageStr);
+      }
+      /**
+       * 描述更新頁面
+       * @date 2022-12-31
+       * @param {any} pageStr 輸入字串做篩選條件
+       * @returns {any}
+       */
+      function UpPage(pageStr) {
+        pageData = [];
+        pageData = appleData.filter(x => x.productName == pageStr);
+        addCarousel(pageData[0].kv_img);
+        console.log(pageData[0]);
+        addColorBtn(pageData[0].color);
+        addSpecificationBtn(pageData[0].specification);
+        getDom();
+        display.innerText = spec_btns[0].querySelector('.price').innerText; //顯示第一筆規格價錢
+        colorBtns.forEach(colorBtn => colorBtn.addEventListener('click', function (e) {
+          let colorRGBstr = e.target.dataset.colorrgb;
+          colorChange(colorRGBstr, pageData);
+        }));
+        console.log(spec_btns);
+        spec_btns.forEach(spec_btn => spec_btn.addEventListener('click', display_price));
+      }
+
+      /**
+       * 描述 投影片插入畫面
+       * @date 2022-12-30
+       * @param {any} pageData 
+       * @returns {any}
+       */
+      function addCarousel(pageData) {//增加投影片
+        carousel.innerHTML = "";
+        carousel.innerHTML = `<div class="carousel-inner"></div><button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+    </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>`;
+        const carousel_inner = document.querySelector('.carousel-inner');
+        carousel_inner.innerHTML = "";
+        for (let i = 0; i < pageData.length; i++) {
+          if (i == 0) {
+            let str = `<div class="carousel-item active"><img src="${pageData[i]}" class="d-block w-100" alt="..."></div>`;
+            carousel_inner.innerHTML += str;
+          }
+          else {
+            let str = `<div class="carousel-item"><img src="${pageData[i]}" class="d-block w-100" alt="..."></div>`;
+            carousel_inner.innerHTML += str;
+          }
+        }
+      }
+      /**
+       * 描述 增加color 按鈕到畫面上
+       * @date 2022-12-30
+       * @param {any} color 
+       * @returns {any}
+       */
+      function addColorBtn(color) {//增加顏色按鈕
+        color_Block.innerHTML = '';
+        color.forEach(x => {
+          let str = `<button style="background-color:${x.RGB}" data-colorRGB="${x.RGB}" class="color m-1"> </button>`
+          color_Block.innerHTML += str;
+        })
+      }
+      /**
+       * 描述 增加規格按鈕
+       * @date 2022-12-30
+       * @param {any} specification
+       * @returns {any}
+       */
+      function addSpecificationBtn(specification) {
+        specification_Block.innerHTML = '';
+        specification.forEach(x => {
+          let str = `<button class="specification spec_btn mt-3 d-flex justify-content-around p-3  rounded-pill " col-12 data-nt="${x.price}">
+                            <div data-nt="${x.price}" class="capacity">${x.storage}</div>
+                            <div data-nt="${x.price}" class="price">NT$${x.price}</div>
+                   </button>`;
+          specification_Block.innerHTML += str;
+        })
+      }
+      /**
+       * 描述 取得動態DOM
+       * @date 2022-12-30
+       * @returns {any}
+       */
+      function getDom() {
+        price = document.querySelector('.price');
+        colorBtns = document.querySelectorAll('.color');
+        spec_btns = document.querySelectorAll('.spec_btn');
+        display = document.querySelector('.display-price');
+
+      }
+      /**
+       * 描述 點擊更換顏色幻燈片
+       * @date 2022-12-30
+       * @param {any} colorRGB 色碼
+       * @param {any} pageData 
+       * @returns {any}
+       */
+      function colorChange(colorRGB, pageData) {
+        let colorImg = pageData[0].color.filter(x => x.RGB == colorRGB);
+        console.log(colorImg[0]);
+        addCarousel(colorImg[0].url);
+      }
+      /**
+       * 描述 選取規格顯示價錢
+       * @date 2022-12-30
+       * @param {any} e
+       * @returns {any}
+       */
+      function display_price(e) {
+        let str = e.target.dataset.nt;
+        console.log(str)
+        display.innerText = `NT$${str}`;
+      }
+//#endregion
+    </script>
+
 </body>
 
 </html>
