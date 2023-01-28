@@ -10,10 +10,11 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/normalize.css">
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
+
     .btn-group {
       display: flex;
       justify-content: center;
@@ -40,7 +41,7 @@
     }
 
     .color:focus {
-      
+
       position: relative;
       bottom: 5px;
     }
@@ -48,8 +49,6 @@
     .specification:focus {
       border: 2px rgba(54, 54, 53, 0.559) solid;
     }
-
-  
   </style>
 </head>
 
@@ -169,37 +168,25 @@
 
 
       let pageData = [];
-      //#endregion
-      //#region DOM
+
+      //DOM
       const page_Btns = document.querySelectorAll('.page_btn');
       const carousel = document.querySelector('.carousel');
       const color_Block = document.querySelector('.color-block');
       const specification_Block = document.querySelector('.specification-block');
       let price, specification, colorBtns, display, spec_btns;
-      //#endregion
-      //#region windowonload
+
+      //window onload
       window.onload = () => {
         UpPage("iPhone");//初始化頁面 顯示IPhone
         page_Btns.forEach(page_btn => page_btn.addEventListener('click', ChangePage));
       };
-      //#endregion
-      //#region 函式
-      /**
-       * 描述 更換產品頁面
-       * @date 2022-12-30
-       * @param {any} e
-       * @returns {any}
-       */
+      //function
       function ChangePage(e) {
         let pageStr = e.target.dataset.page;
         UpPage(pageStr);
       }
-      /**
-       * 描述更新頁面
-       * @date 2022-12-31
-       * @param {any} pageStr 輸入字串做篩選條件
-       * @returns {any}
-       */
+      //輸入字串做篩選條件
       function UpPage(pageStr) {
         pageData = [];
         pageData = appleData.filter(x => x.productName == pageStr);
@@ -208,7 +195,9 @@
         addColorBtn(pageData[0].color);
         addSpecificationBtn(pageData[0].specification);
         getDom();
-        display.innerText = spec_btns[0].querySelector('.price').innerText; //顯示第一筆規格價錢
+        //顯示第一筆規格價錢
+        display.innerText = spec_btns[0].querySelector('.price').innerText;
+
         colorBtns.forEach(colorBtn => colorBtn.addEventListener('click', function (e) {
           let colorRGBstr = e.target.dataset.colorrgb;
           colorChange(colorRGBstr, pageData);
@@ -217,12 +206,7 @@
         spec_btns.forEach(spec_btn => spec_btn.addEventListener('click', display_price));
       }
 
-      /**
-       * 描述 投影片插入畫面
-       * @date 2022-12-30
-       * @param {any} pageData 
-       * @returns {any}
-       */
+      //投影片插入畫面
       function addCarousel(pageData) {//增加投影片
         carousel.innerHTML = "";
         carousel.innerHTML = `<div class="carousel-inner"></div><button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -246,12 +230,7 @@
           }
         }
       }
-      /**
-       * 描述 增加color 按鈕到畫面上
-       * @date 2022-12-30
-       * @param {any} color 
-       * @returns {any}
-       */
+      //增加color 按鈕到畫面上
       function addColorBtn(color) {//增加顏色按鈕
         color_Block.innerHTML = '';
         color.forEach(x => {
@@ -259,12 +238,8 @@
           color_Block.innerHTML += str;
         })
       }
-      /**
-       * 描述 增加規格按鈕
-       * @date 2022-12-30
-       * @param {any} specification
-       * @returns {any}
-       */
+      //描述 增加規格按鈕
+
       function addSpecificationBtn(specification) {
         specification_Block.innerHTML = '';
         specification.forEach(x => {
@@ -275,11 +250,7 @@
           specification_Block.innerHTML += str;
         })
       }
-      /**
-       * 描述 取得動態DOM
-       * @date 2022-12-30
-       * @returns {any}
-       */
+      //取得動態DOM
       function getDom() {
         price = document.querySelector('.price');
         colorBtns = document.querySelectorAll('.color');
@@ -287,30 +258,18 @@
         display = document.querySelector('.display-price');
 
       }
-      /**
-       * 描述 點擊更換顏色幻燈片
-       * @date 2022-12-30
-       * @param {any} colorRGB 色碼
-       * @param {any} pageData 
-       * @returns {any}
-       */
+      //點擊更換顏色幻燈片
       function colorChange(colorRGB, pageData) {
         let colorImg = pageData[0].color.filter(x => x.RGB == colorRGB);
         console.log(colorImg[0]);
         addCarousel(colorImg[0].url);
       }
-      /**
-       * 描述 選取規格顯示價錢
-       * @date 2022-12-30
-       * @param {any} e
-       * @returns {any}
-       */
+      //選取規格顯示價錢
       function display_price(e) {
         let str = e.target.dataset.nt;
         console.log(str)
         display.innerText = `NT$${str}`;
       }
-//#endregion
     </script>
 
 </body>
