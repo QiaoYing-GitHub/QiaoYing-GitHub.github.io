@@ -48,22 +48,19 @@
     let deleteBtn;
     let saveBtn;
     let editBtn;
-    //DOM
-    let add = document.querySelector('.add')
-    let taskInput = document.getElementById("task")
-    let wrap = document.querySelector('.wrap')
 
-    wrap.addEventListener('click', deleteFunction);
+    //DOM
+    const add = document.querySelector('.add')
+    let taskInput = document.getElementById("task")
+    const wrap = document.querySelector('.wrap')
+
+    //監聽事件
     add.addEventListener('click', addTask);
-    wrap.addEventListener('click', save)
-    wrap.addEventListener('click', edit)
-    wrap.addEventListener('click', check)
-    //將事件從轉JSON資料轉成陣列
+
     let data = JSON.parse(localStorage.getItem('listData')) || [];
+
     //window.onload
     window.onload = function () {
-
-      //更新事件
       updateList(data);
     }
 
@@ -74,6 +71,7 @@
       let task = document.getElementById("task").value;
       let addContent = taskInput.value.trim();
       let state = 0;
+      let EditState = 0;
 
       if (addContent == "") {
         alert("尚未輸入內容");
@@ -82,13 +80,11 @@
 
       let todo = {
         content: task,
-        checkbox: state
+        checkbox: state,
+        EditBtn: EditState
       };
 
-      //增加入待辦事件到陣列中
       data.push(todo);
-
-      //將待辦事件轉化成 JSON 字串 
       localStorage.setItem('listData', JSON.stringify(data));
 
       //更新網頁內容
@@ -106,12 +102,12 @@
 
         inputWrap.innerHTML = `<div class="input-group-text">
               <input class="form-check-input mt-0" type="checkbox" value=""
-                aria-label="Checkbox for following text input">
+                aria-label="Checkbox for following text input" onclick="check(event)">
             </div>
             <input disabled type="text" class="form-control itemInput" aria-label="Text input with checkbox">`
-        btnWrap.innerHTML = `<button class="btn edit " type="button">編輯</button>
-          <button class="btn save " type="button">保存</button>
-          <button class="btn delete " type="button"  data-listNum=${i}>刪除</button>
+        btnWrap.innerHTML = `<button class="btn edit " type="button"onclick="edit(event)">編輯</button>
+          <button class="btn save " type="button" onclick="save(event)">保存</button>
+          <button class="btn delete " type="button"  data-listNum=${i} onclick="deleteFunction(event)">刪除</button>
           <div>`
 
         //添加class
@@ -133,76 +129,85 @@
           allCheckbox[i].setAttribute('checked', '')
         }
 
+
         //代辦事項內容
         itemInput = document.querySelectorAll('.itemInput')
         itemInput[i].value = items[i].content
+
+        deleteBtn = document.querySelector('.delete')
+        saveBtn = document.querySelectorAll('.save')
+        editBtn = document.querySelectorAll(".edit")
+
+        //編輯狀態
+        if (items[i].EditBtn == 1) {
+
+          itemInput[i].removeAttribute('disabled')
+          editBtn[i].style.display = "none";
+          saveBtn[i].style.display = "inline-block";
+        }
       }
-      deleteBtn = document.querySelector('.delete')
-      saveBtn = document.querySelectorAll('.save')
-      editBtn = document.querySelectorAll(".edit")
+
+
     };
 
-    //編輯按鈕
+    //編輯
     function edit(event) {
-      let editTarget = event.target
+      let editTarget = event.target //指向觸發事件的 DOM 物件
       let liIndex = editTarget.parentNode.parentNode.getAttribute('data-li')
-      if (editTarget.classList.contains('edit')) {
-        itemInput[liIndex].removeAttribute('disabled')
-        editTarget.style.display = "none";
-        saveBtn[liIndex].style.display = "inline-block";
-      }
+      itemInput[liIndex].removeAttribute('disabled')
+      editBtn[liIndex].style.display = "none";
+      saveBtn[liIndex].style.display = "inline-block";
+      data[liIndex].EditBtn = 1
+      localStorage.setItem('listData', JSON.stringify(data));
     }
 
-    //保存按鈕
+    //保存
     function save(event) {
       let saveTarget = event.target
       let liIndex = saveTarget.parentNode.parentNode.getAttribute('data-li')
-      if (saveTarget.classList.contains('save')) {
-        itemInput[liIndex].setAttribute('disabled', 'true')
-        editBtn[liIndex].style.display = "inline-block";
-        saveTarget.style.display = "none";
-        data[liIndex].content = itemInput[liIndex].value;
-        localStorage.setItem('listData', JSON.stringify(data));
-        updateList(data);
-      }
+      itemInput[liIndex].setAttribute('disabled', 'true')
+      editBtn[liIndex].style.display = "inline-block";
+      saveBtn[liIndex].style.display = "none";
+      data[liIndex].content = itemInput[liIndex].value;
+      // for (i = 0; i < data.length; i++) {
+      //   data[i].content = itemInput[i].value;
+      // }
+      data[liIndex].EditBtn = 0
+      localStorage.setItem('listData', JSON.stringify(data));
+      updateList(data);
+
     }
 
-    //刪除按鈕
+    //刪除
     function deleteFunction(event) {
       let list = document.querySelector('list');
-      if (event.target.classList.contains('delete')) {
-        
-        //選到的待辦事項
-        let listNum = event.target.dataset.listnum;
+      //選到的待辦事項
+      let listNum = event.target.dataset.listnum;
 
-        //刪除事項
-        data.splice(listNum, 1);
+      //刪除事項
+      data.splice(listNum, 1);
 
-        //更新網頁內容
-        localStorage.setItem('listData', JSON.stringify(data));
-        updateList(data);
-      }
+      //更新網頁內容
+      localStorage.setItem('listData', JSON.stringify(data));
+      updateList(data);
     }
 
-    //checkbox事件
+
+    //checkbox
     function check(event) {
       let checkbox = document.querySelectorAll('.form-check-input')
       let checkboxTarget = event.target
-
-      if (checkboxTarget.classList.contains('form-check-input')) {
-        let liIndex = checkboxTarget.parentNode.parentNode.parentNode.getAttribute('data-li')
-        if (checkboxTarget.checked) {
-          state = 1
-        }
-        else {
-          state = 0
-        }
-        data[liIndex].checkbox = state
-        localStorage.setItem('listData', JSON.stringify(data));
-        updateList(data);
+      let liIndex = checkboxTarget.parentNode.parentNode.parentNode.getAttribute('data-li')
+      if (checkboxTarget.checked) {
+        state = 1
       }
+      else {
+        state = 0
+      }
+      data[liIndex].checkbox = state
+      localStorage.setItem('listData', JSON.stringify(data));
+      updateList(data);
     }
-
 
 
   </script>
