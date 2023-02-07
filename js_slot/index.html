@@ -8,11 +8,12 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  
+
   <style>
     i {
-      font-size: 45px;}
-    
+      font-size: 45px;
+    }
+
 
     [box-id] {
       height: 80px;
@@ -33,10 +34,22 @@
       font-size: 36px;
       text-align: center;
     }
-    .movie{
+
+    .movie {
       text-align: center;
       font-size: 40px;
       font-weight: bold;
+    }
+    img{
+      width: 50%;
+    }
+    .start{
+      display: flex;
+      justify-content: center;
+    }
+    .img{
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
@@ -79,8 +92,8 @@
     </div>
     <div class="row">
       <div box-id="29" class="col-1"></div>
-      <div class="col-10">
-
+      <div class="col-10 start">
+<button class="btn btn-dark w-50 rounded-pill">start</button>
       </div>
       <div box-id="16" class="col-1"></div>
     </div>
@@ -98,15 +111,10 @@
       <div box-id="18" class="col-1"></div>
       <div box-id="17" class="col-1"></div>
     </div>
-    <!-- button -->
+    
     <div class="row mt-5">
-      <div class="col-12">
-        <button class="btn btn-dark w-100 rounded-pill">start</button>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-12">
-        <img class="movImg" src="" alt="">
+      <div class="col-12 img">
+        <img class="movImg" >
       </div>
     </div>
   </div>
@@ -125,6 +133,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '	刺激1995'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -133,6 +144,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '教父'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -141,6 +155,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '黑暗騎士'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -149,6 +166,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '十二怒漢'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -157,6 +177,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '辛德勒的名單'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -165,6 +188,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '魔戒三部曲:王者再臨'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -173,6 +199,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '黑色追緝令'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -181,6 +210,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '魔戒首部曲:魔戒現身'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -189,6 +221,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '	黃昏三鏢客'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -197,6 +232,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '	阿甘正傳'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -205,6 +243,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '鬥陣俱樂部'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -213,6 +254,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '	全面啟動'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -221,6 +265,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '魔戒二部曲:雙城奇謀'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -229,6 +276,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '星際大戰五部曲:帝國大反擊'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -237,6 +287,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '駭客任務'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -245,6 +298,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '	四海好傢伙'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -253,6 +309,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '	飛越杜鵑窩'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -261,6 +320,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '	火線追緝令'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -269,6 +331,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '七武士'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -277,6 +342,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '	風雲人物'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -285,6 +353,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '沉默的羔羊'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -293,6 +364,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '	無法無天'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -301,6 +375,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '搶救雷恩大兵'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -309,6 +386,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '	美麗人生'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -317,6 +397,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '	綠色奇蹟'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -325,6 +408,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '	星際效應'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -333,6 +419,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '星際大戰'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -341,6 +430,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '	魔鬼終結者2'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -349,6 +441,9 @@
         icon: 'fa-solid fa-film',
         target: function () {
           return '回到未來'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -357,6 +452,9 @@
         icon: 'fa-solid fa-video',
         target: function () {
           return '	神隱少女'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -365,6 +463,9 @@
         icon: 'fa-solid fa-ticket',
         target: function () {
           return '	驚魂記'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       },
       {
@@ -373,6 +474,9 @@
         icon: 'fa-solid fa-clapperboard',
         target: function () {
           return '	戰地琴人'
+        },
+        img: function () {
+          return './img/20190603035232_78.jpg'
         }
       }
 
@@ -385,6 +489,7 @@
     // DOM
     const startBtn = document.querySelector('button')
     const msgBox = document.getElementById("msg")
+    const movImg = document.querySelector('.movImg')
     // function
     function renderBrick() {
       bricks = document.querySelectorAll('[box-id]')
@@ -427,6 +532,7 @@
       else {
         // 走完了
         msgBox.innerText = brickData[current].target()
+        movImg.setAttribute("src", brickData[current].img())
       }
     }
     // window.onload
