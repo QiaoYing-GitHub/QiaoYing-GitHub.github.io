@@ -1,0 +1,486 @@
+:root {
+  --main-pink: #A27F82;
+  --dark-gray: #56565E;
+  --light-gray: #D3C9C9;
+  --peach-pink: #E3A4A4;
+  --light-pink: #FEF4F6;
+}
+
+@media screen and (min-width:1200px) {
+  .shop-manager-main .main-header .hamburger {
+    display: none;
+  }
+
+  .shop-manager-main .main-header {
+    justify-content: end;
+  }
+
+  .shop-manager-main .main-header .searchbar {
+    width: 35%;
+  }
+
+  .shop-manager-main .main-header .searchbar .search-wrap {
+    display: flex;
+    width: 100%;
+
+  }
+
+  .shop-manager-main .main-header .icons {
+    padding: 10px;
+  }
+
+  .order .order-header {
+    justify-content: space-between;
+  }
+
+  .order-body .order-item-wrap {
+    display: flex;
+  }
+
+  .group-body .order-body .order-item-wrap .order-buyer-info {
+    padding-left: 24px;
+  }
+
+
+  .order-body .order-item-wrap .order-item-list {
+    border-right: 1px solid var(--light-gray);
+    padding-right: 24px;
+  }
+
+  .toolbar .hp-none {
+    display: flex;
+  }
+}
+
+.hp-none {
+  display: none;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.required::after {
+  content: '*';
+  color: red;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header */
+.main-header {
+  background-color: var(--peach-pink);
+  padding: 7px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.main-header .checkbox {
+  opacity: 0;
+  display: none;
+}
+
+#search-control:checked~.searchbar {
+  top: 0;
+  transition: .5s;
+}
+
+#close-search:checked~.searchbar {
+  top: -50px;
+  transition: .5s;
+}
+
+.main-header .searchbar {
+  width: 100%;
+  position: absolute;
+  padding: 7px;
+  background-color: var(--peach-pink);
+  top: -50px;
+  /* top: 0; */
+  right: 0;
+}
+
+.main-header .searchbar .btn-close {
+  border-radius: 0.375rem;
+}
+
+.main-header .searchbar button {
+  border: 1px solid #ced4da;
+}
+
+.main-header .searchbar .form-control {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.main-header .hamburger {
+  padding: 10px;
+}
+
+.main-header .icons .icon {
+  margin-left: 26px;
+}
+
+.main-header .icon,
+.main-header .icon a {
+  font-size: 18px;
+  color: var(--dark-gray);
+}
+
+/* 內容 */
+.main-body {
+  padding: 36px 10px;
+  margin: 0 auto;
+  background-color: #F7F7F8;
+}
+
+.main-body h1 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 36px;
+}
+
+/* 小提醒區塊 */
+.reminder {
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 24px;
+  background-color: var(--light-gray);
+}
+
+.reminder .title {
+  color: var(--dark-gray);
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.reminder ul {
+  margin-top: 6px;
+}
+
+.reminder ul li {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.reminder ul li::marker {
+  color: red;
+  font-size: 1.5em;
+}
+
+.reminder a {
+  color: var(--main-pink);
+}
+
+/* 訂單狀態列 */
+.tablist {
+  border-bottom: 1px solid #d3d3d5;
+  overflow-x: auto;
+}
+
+.tablist ul {
+  display: flex;
+  white-space: nowrap;
+}
+
+.tablist .border-bottom{
+  border-bottom: 4px solid var(--main-pink);
+}
+
+
+.tablist ul li a {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 54px;
+  padding: 0 10px;
+  color: var(--dark-gray);
+}
+
+.tablist ul li .count {
+  margin: 0 5px 0 15px;
+}
+
+/* 工具按鈕區 */
+
+.toolbar .wrap {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  overflow-x: auto;
+  padding-top: 14px;
+  width: 100%;
+}
+
+.toolbar .wrap .right-side .toolbar-btn:last-child {
+  margin-right: 0;
+}
+
+.toolbar .sides {
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.toolbar .toolbar-btn {
+  background: #fff;
+  border: 1px solid #d3d3d5;
+  border-radius: 2px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  margin-right: 14px;
+}
+
+.toolbar .toolbar-btn .text {
+  margin-left: 10px;
+}
+
+.toolbar .btn-select {
+  position: relative;
+}
+
+.toolbar .btn-select select {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  border: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.toolbar .btn-select {
+  padding: 12px 36px 12px 12px;
+}
+
+.toolbar .btn-select .select-label {
+  position: relative;
+}
+
+.toolbar .toolbar-label {
+  padding: 12px;
+}
+
+.toolbar .btn-select .select-label:after {
+  border: 6px solid transparent;
+  border-top-color: var(--light-gray);
+  content: "";
+  margin-top: -3px;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+}
+
+.toolbar .order-list-status {
+  margin: 14px 0;
+}
+
+/* 訂單區 */
+.order-group-list .order-group .group-header {
+  align-items: center;
+  padding: 14px;
+  display: flex;
+  font-size: 25px;
+}
+
+.order-group .group-header .select-all {
+  display: flex;
+  align-items: center;
+}
+
+.order-group .group-header .group-count {
+  font-size: 10px;
+}
+
+.group-body {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1px;
+}
+
+.order-group .group-body .order-header {
+  align-items: center;
+  border-bottom: 1px solid #eeeeef;
+  padding: 24px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.order-header .order-info {
+  color: var(--light-gray);
+  display: flex;
+}
+
+.order-header .order-info .order-id a {
+  color: #6590c1;
+  font-weight: bold;
+}
+
+.order-header .order-info .date-total :first-child:after {
+  background: var(--light-gray);
+  content: "";
+  display: inline-block;
+  height: 14px;
+  margin: 0 6px;
+  position: relative;
+  top: 2px;
+  width: 1px;
+}
+
+.order-header .order-checkbox {
+  margin-right: 15px;
+}
+
+/* action--------------------------- */
+.order-header .order-actions .modal-footer .btn {
+  background-color: var(--peach-pink);
+  color: #2d2d2d;
+  border: none;
+}
+
+.order-header .order-actions {
+  display: flex;
+  float: none;
+  justify-content: left;
+  margin-top: 14px;
+  padding-left: 48px;
+}
+
+.order-header .order-actions>div {
+  padding: 15px;
+}
+
+.order-header .order-actions i {
+  color: var(--dark-gray);
+}
+
+.order-header .order-actions .ac-shippingdate input {
+  margin-bottom: 30px;
+}
+
+.order-header .order-actions .text-count {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.order-header .order-actions .ac-ordertab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.order-header .order-actions .dropdown-content {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  background-color: #f9f9f9;
+  max-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.order-header .order-actions .dropdown-content img {
+  width: 150px;
+  margin-bottom: 5px;
+}
+
+.order-header .order-actions .dropdown-content button {
+  margin-top: 10px;
+}
+
+.order-header .order-actions .ac-ordertab {
+  position: relative;
+}
+
+.order-header .order-actions .ac-ordertab:hover .dropdown-content {
+  display: flex;
+}
+
+/* ---------------------- */
+.order-group .group-body .order-body {
+  padding: 24px;
+  overflow: hidden;
+}
+
+
+
+.order-item-wrap .order-item-list {
+  padding: 0;
+}
+
+.group-body .order-body .order-status .status-label {
+  font-weight: bold;
+  background-color: var(--peach-pink);
+  color: var(--light-pink);
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.order-item-wrap {
+  width: 100%;
+  margin: 0;
+}
+
+.group-body .order-body .item {
+  display: flex;
+}
+
+.group-body .order-body .item .item-img {
+  height: 80px;
+  width: 80px;
+}
+
+.group-body .order-body .item .item-info {
+  padding: 0 14px;
+
+}
+
+.group-body .order-body .item .item-info .name a {
+  color: var(--dark-gray);
+}
+
+.group-body .order-body .item .item-info .spec a {
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+.group-body .order-body .item-count {
+  margin-top: 10px;
+}
+
+.group-body .order-body .order-buyer-info {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.group-body .order-body .order-buyer-info .buyer-name {
+  color: #6590c1;
+}
+
+.group-body .order-body .order-buyer-info .recipient-info {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+}
