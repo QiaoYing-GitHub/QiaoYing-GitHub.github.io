@@ -66,8 +66,8 @@
             <!-- 訂單狀態列 -->
             <div class="tablist mb-3">
               <ul>
-                <li class="border-bottom"><a href="">待出貨<span class="count">1</span></a></li>
-                <li><a href="">已出貨<span class="count">1</span></a></li>
+                <li ><a href="">待出貨<span class="count">1</span></a></li >
+                <li class="bb"><a href="">已出貨<span class="count"></span></a></li>
                 <li><a href="">已完成<span class="count">50</span></a></li>
                 <li><a href="">已取消<span class="count">1</span></a></li>
               </ul>
@@ -135,154 +135,9 @@
             <!-- 訂單 -->
             <div class="order-group-list">
               <!-- 訂單群組(依物流) -->
-              <div class="order-group">
-                <div class="group-header mb-3 p3">
-                  <div class="select-all">
-                    <input type="checkbox" class="form-check-input" id="shipping-select-all">
-                    <label class="mx-2" for="shipping-select-all">7-11 取貨付款</label>
-                    <span class="group-count">1</span>
-                  </div>
-                </div>
-                <div class="group-body">
-                  <!-- 個別訂單 -->
-                  <div class="order">
-                    <div class="order-header">
-                      <div class="order-info">
-                        <!-- 訂單編號日期 -->
-                        <input class="order-checkbox form-check-input mt-2" type="checkbox" id="order-select">
-                        <label for="order-select"></label>
-                        <div class="order-detail">
-                          <p class="order-id mb-1"><a href="#">202302101623JYES</a> </p>
-                          <p class="date-total mb-1">
-                            <span>2023-02-10</span>
-                            <span>NT$ 225</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="order-actions">
-                        <div class="ac-shippingdate">
-                          <!-- Button trigger modal -->
-                          <i class="fa-regular fa-calendar" data-bs-toggle="modal" data-bs-target="#shippingdate"></i>
-                          <!-- Modal -->
-                          <div class="modal fade" id="shippingdate" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <div class="modal-title fs-5" id="staticBackdropLabel">設定預估出貨日期</div>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body ">
-                                  <!-- 日期選擇 -->
-                                  <label class="form-label required">設定預估出貨日期</label>
-                                  <input type="date" autocomplete="off" class="form-control mx-auto datepicker"
-                                    placeholder="日期">
-                                  <!-- 想對買家說的話 -->
-                                  <label class="form-label">想對買家說的話</label>
-                                  <div class="form-floating">
-                                    <textarea class="form-control" placeholder="對買家表達你的感謝與叮嚀" id="floatingTextarea2"
-                                      style="height: 100px"></textarea>
-                                    <label for="floatingTextarea2">對買家表達你的感謝與叮嚀</label>
-                                  </div>
-
-                                  <div class="text-count">0/700</div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn" data-bs-dismiss="modal" disabled>設定預估出貨日期</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="ac-addnote">
-                          <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop"></i>
-
-                          <!-- Modal -->
-                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <div class="modal-title fs-5" id="staticBackdropLabel">新增私下備註</div>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="reminder mb-4">
-                                    <div class="title">小提醒</div>
-                                    <ul>
-                                      <li>私下備註為設計館內部提醒與記錄使用，只提供新增與刪除的功能，最多可記錄 20 筆，買家無法看到。</li>
-                                    </ul>
-                                  </div>
-                                  <label class="form-label required">你想紀錄的事</label>
-                                  <div class="form-floating">
-                                    <textarea class="form-control" placeholder="紀錄關於訂單的相關細節" id="floatingTextarea2"
-                                      style="height: 100px"></textarea>
-                                    <label for="floatingTextarea2">紀錄關於訂單的相關細節</label>
-                                  </div>
-
-                                  <div class="text-count">0/200</div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn " data-bs-dismiss="modal" disabled>新增私下備註</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="ac-ordertab">
-                          <i class="fa-solid fa-tag"></i>
-                          <div class="dropdown-content">
-                            <img src="./image/img-tag-empty.png" alt="">
-                            <p>目前沒有自定義標籤</p>
-                            <button type="button" class="btn btn-outline-dark">新增標籤</button>
-                          </div>
-                        </div>
-                        <div class="ac-orderdetail">
-                          <a href="#">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                          </a>
-                        </div>
-
-
-                      </div>
-                    </div>
-                    <div class="order-body">
-                      <div class="order-status mb-2">
-                        <span class="status-label"> 尚未出貨</span>
-                      </div>
-
-                      <div class="order-item-wrap row">
-                        <div class="order-item-list col-xl-6 py-4">
-                          <div class="item-list-goods mb-2">
-                            <div class="item">
-                              <div class="item-img">
-                                <a href="#"><img src="https://fakeimg.pl/80x80/200"></a>
-                              </div>
-                              <div class="item-info">
-                                <p class="name"><a href="#">Lorem ipsum dolor sit amet vfgdfsv Lorem ipsum dolor
-                                    sitamet</a></p>
-                                <p class="spec"><a href="#">Lorem</a></p>
-                              </div>
-                              <div class="item-quantity">x1</div>
-                            </div>
-                            <div class="item-count">共 1 件商品</div>
-                          </div>
-                        </div>
-                        <div class="order-buyer-info col-xl-6 py-4">
-                          <div class="buyer-name mb-3">qqq1111</div>
-                          <div class="shipping-info mb-3">7-11 取貨付款</div>
-                          <div class="recipient-info">
-                            <p class="info-item-name mb-2">Lorem</p>
-                            <p class="info-item-address">超商名稱：123, 超商代碼：209155</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="no-order">
+                <img src="./image/order_v2.png" alt="">
+                <p>你沒有已出貨的訂單</p>
               </div>
             </div>
           </div>

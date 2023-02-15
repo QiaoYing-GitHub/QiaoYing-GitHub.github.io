@@ -191,7 +191,7 @@ a {
   white-space: nowrap;
 }
 
-.tablist .border-bottom{
+.tablist .bb{
   border-bottom: 4px solid var(--main-pink);
 }
 
@@ -291,7 +291,16 @@ a {
   display: flex;
   font-size: 25px;
 }
-
+.order-group-list .no-order{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.order-group-list .no-order img{
+  width: 20%;
+  margin: 0 auto 20px auto;
+}
 .order-group .group-header .select-all {
   display: flex;
   align-items: center;
