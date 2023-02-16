@@ -5,7 +5,9 @@
   --peach-pink: #E3A4A4;
   --light-pink: #FEF4F6;
 }
-
+.side-menu{
+  display: none;
+}
 @media screen and (min-width:1200px) {
   .shop-manager-main .main-header .hamburger {
     display: none;
@@ -75,9 +77,11 @@ a {
 body {
   background-color: #F7F7F8;
 }
-.shop-manager-wrapper{
+
+.shop-manager-wrapper {
   display: flex;
 }
+
 /* header */
 .main-header {
   background-color: var(--peach-pink);
@@ -176,11 +180,15 @@ body {
 .reminder ul li {
   margin-top: 10px;
   line-height: 1.5;
+  text-indent: -5px;
+  padding-left: 15px;
 }
 
-.reminder ul li::marker {
-  color: red;
-  font-size: 1.5em;
+
+.reminder ul li:before {
+  width: 5px;
+  content: '•';
+  display: inline-block;
 }
 
 .reminder a {
@@ -188,14 +196,18 @@ body {
 }
 
 /* 訂單狀態列 */
-.tablist {
+.container .main-body .tablist {
   border-bottom: 1px solid #d3d3d5;
+  overflow: hidden;
   overflow-x: auto;
 }
 
-.tablist ul {
+.container .main-body .tablist .navpill{
+  border-bottom: 1px solid #d3d3d5;
+  overflow: hidden;
+  overflow-x: auto;
   display: flex;
-  white-space: nowrap;
+  flex-wrap: wrap;
 }
 
 .tablist .bb {
@@ -203,7 +215,7 @@ body {
 }
 
 
-.tablist ul li button{
+.tablist button {
   font-size: 18px;
   font-weight: bold;
   line-height: 54px;
@@ -211,7 +223,7 @@ body {
   color: var(--dark-gray);
 }
 
-.tablist ul li .count {
+.tablist .count {
   margin: 0 5px 0 15px;
 }
 
@@ -243,11 +255,13 @@ body {
       left: 0;
         right: 0; */
 }
-.sticky{
+
+.sticky {
   position: sticky;
-    top: 0;
-    background-color:#F7F7F8 ;
+  top: 0;
+  background-color: #F7F7F8;
 }
+
 .toolbar .wrap .right-side .toolbar-btn:last-child {
   margin-right: 0;
 }
@@ -306,10 +320,6 @@ body {
   position: absolute;
   right: -20px;
   top: 50%;
-}
-
-.toolbar .order-list-status {
-  margin: 20px 0;
 }
 
 /* 訂單區 */
@@ -381,6 +391,10 @@ body {
 }
 
 /* action--------------------------- */
+.form-floating label {
+  font-size: 15px;
+}
+
 .order-header .order-actions .modal-footer .btn {
   background-color: var(--peach-pink);
   color: #2d2d2d;
