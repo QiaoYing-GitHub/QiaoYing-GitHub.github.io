@@ -75,7 +75,9 @@ a {
 body {
   background-color: #F7F7F8;
 }
-
+.shop-manager-wrapper{
+  display: flex;
+}
 /* header */
 .main-header {
   background-color: var(--peach-pink);
@@ -307,7 +309,7 @@ body {
 }
 
 .toolbar .order-list-status {
-  margin: 14px 0;
+  margin: 20px 0;
 }
 
 /* 訂單區 */
