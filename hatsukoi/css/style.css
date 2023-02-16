@@ -50,6 +50,7 @@
   .toolbar .hp-none {
     display: flex;
   }
+
 }
 
 .hp-none {
@@ -69,6 +70,10 @@
 
 a {
   text-decoration: none;
+}
+
+body {
+  background-color: #F7F7F8;
 }
 
 /* header */
@@ -137,7 +142,7 @@ a {
 .main-body {
   padding: 36px 10px;
   margin: 0 auto;
-  background-color: #F7F7F8;
+
 }
 
 .main-body h1 {
@@ -191,12 +196,12 @@ a {
   white-space: nowrap;
 }
 
-.tablist .bb{
+.tablist .bb {
   border-bottom: 4px solid var(--main-pink);
 }
 
 
-.tablist ul li a {
+.tablist ul li button{
   font-size: 18px;
   font-weight: bold;
   line-height: 54px;
@@ -206,6 +211,18 @@ a {
 
 .tablist ul li .count {
   margin: 0 5px 0 15px;
+}
+
+.tablist .nav-item button {
+  border-radius: 0;
+  color: var(--dark-gray);
+}
+
+.tablist .nav-pills .nav-link.active {
+  background-color: #F7F7F8;
+  color: var(--dark-gray);
+  border-bottom: 4px solid var(--main-pink);
+
 }
 
 /* 工具按鈕區 */
@@ -218,8 +235,17 @@ a {
   overflow-x: auto;
   padding-top: 14px;
   width: 100%;
+  /* position: fixed;
+  overflow: visible;
+  top: 0;
+      left: 0;
+        right: 0; */
 }
-
+.sticky{
+  position: sticky;
+    top: 0;
+    background-color:#F7F7F8 ;
+}
 .toolbar .wrap .right-side .toolbar-btn:last-child {
   margin-right: 0;
 }
@@ -291,16 +317,19 @@ a {
   display: flex;
   font-size: 25px;
 }
-.order-group-list .no-order{
+
+.order-group-list .no-order {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
-.order-group-list .no-order img{
-  width: 20%;
+
+.order-group-list .no-order img {
+  width: 25%;
   margin: 0 auto 20px auto;
 }
+
 .order-group .group-header .select-all {
   display: flex;
   align-items: center;
@@ -310,7 +339,7 @@ a {
   font-size: 10px;
 }
 
-.group-body {
+.group-body .order {
   background-color: #fff;
   border-radius: 5px;
   padding: 1px;
@@ -449,6 +478,7 @@ a {
 
 .group-body .order-body .item {
   display: flex;
+  position: relative;
 }
 
 .group-body .order-body .item .item-img {
@@ -465,9 +495,21 @@ a {
   color: var(--dark-gray);
 }
 
+.group-body .order-body .item .item-info .name {
+  color: var(--dark-gray);
+  margin-right: 40px;
+}
+
 .group-body .order-body .item .item-info .spec a {
   font-size: 12px;
   color: var(--light-gray);
+}
+
+.group-body .order-body .item .item-quantity {
+  display: flex;
+  justify-content: end;
+  right: 0;
+  position: absolute;
 }
 
 .group-body .order-body .item-count {
