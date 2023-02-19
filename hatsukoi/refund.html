@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/order_detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="refund-wrapper">
+
+    <!-- 左側選單 -->
+    <div class="side-menu col-4 col-md-2">
+      <div class="container">
+        <div class="row">
+          <input type="checkbox" id="phone-menu-control5">
+          <div>
+            <label for="phone-menu-control5" class="HB5">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+
+          <input type="checkbox" id="open-bar5">
+          <input type="checkbox" id="order-open-bar5">
+          <input type="checkbox" id="marketing-open-bar5">
+          <input type="checkbox" id="sale-open-bar5">
+          <input type="checkbox" id="line-open-bar5">
+
+          <nav class="seller-nav5">
+            <div class="logo5">
+              <img src="./image/hatsukoi_icon.svg" alt="">
+              <p>設計館管理平台</p>
+            </div>
+
+            <ul class="seller-front-page5"><i class="fa-solid fa-house"></i><a href="#">首頁</a></ul>
+
+            <div class="seller-main-function5">
+              <i class="fa-solid fa-gift"></i>
+              <label for="open-bar5" class="label-open-bar5">
+                <h2>商品管理</h2>
+                <i class="fa-solid fa-chevron-up icon5"></i>
+                <ul class="seller-item5">
+                  <i class="fa-solid fa-xmark"></i>
+                  <li>商品管理</li>
+                  <li>所有商品</li>
+                  <li>主打商品</li>
+                  <li>商品自訂排序</li>
+                  <li>建立商品</li>
+                </ul>
+              </label>
+
+            </div>
+
+            <div class="seller-main-function5">
+              <i class="fa-regular fa-paper-plane"></i>
+              <label for="order-open-bar5" class="label-order-open-bar5">
+                <h2>訂單管理</h2>
+                <i class="fa-solid fa-chevron-up icon5"></i>
+                <ul class="seller-item5">
+                  <i class="fa-solid fa-xmark"></i>
+                  <li>訂單管理</li>
+                  <li>所有訂單</li>
+                  <li>評價管理</li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="seller-main-function5">
+              <i class="fa-regular fa-lightbulb "></i>
+              <label for="marketing-open-bar5" class="label-marketing-open-bar5">
+                <h2>行銷工具</h2>
+                <i class="fa-solid fa-chevron-up icon5"></i>
+                <ul class="seller-item5">
+                  <i class="fa-solid fa-xmark"></i>
+                  <li>行銷工具</li>
+                  <li></li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="seller-main-function5">
+              <i class="fa-solid fa-sack-dollar "></i>
+              <label for="sale-open-bar5" class="label-sale-open-bar5">
+                <h2>營銷管理</h2>
+                <i class="fa-solid fa-chevron-up icon5"></i>
+                <ul class="seller-item5">
+                  <i class="fa-solid fa-xmark"></i>
+                  <li>營銷管理</li>
+                  <li>銷售狀況</li>
+                  <li>圖表</li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="seller-main-function5">
+              <i class="fa-solid fa-chart-line"></i>
+              <label for="line-open-bar5" class="label-data-open-bar5">
+                <h2>數據中心</h2>
+                <i class="fa-solid fa-chevron-up icon5"></i>
+                <ul class="seller-item5 one">
+                  <i class="fa-solid fa-xmark"></i>
+                  <li>數據中心</li>
+                  <li></li>
+                </ul>
+              </label>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 右側功能頁 -->
+    <div class="refund-main col-12 col-md-10">
+      <div class="main-header">
+        <!-- <label for="phone-menu-control5" class="HB5">
+        <span class="hamburger icon"><i class="fa-solid fa-bars"></i></span>
+        </label> -->
+        <div class="icons">
+          <input class="checkbox" type="checkbox" name="" id="search-control">
+
+          <span class="icon"> <label for="search-control" class="search"><i class="fa-solid fa-magnifying-glass"></i>
+            </label></span>
+
+
+          <input class="checkbox" type="checkbox" name="" id="close-search">
+
+          <div class="searchbar input-group mb-3">
+            <button class="btn btn btn-light" type="button" id="button-addon2"><label for="close-search"
+                class="search"><i class="fa-solid fa-xmark"></i></label></button>
+            <input type="text" class="form-control" placeholder="訂單編號、姓名、電話、地址、備註、商品名稱、追蹤編號"
+              aria-label="Recipient's username" aria-describedby="button-addon2">
+
+            <button class="btn btn btn-light" type="button" id="button-addon2"><i
+                class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <span class="icon"><i class="fa-regular fa-message"></i></span>
+
+          <span class="icon"><a href=""><i class="fa-solid fa-store"></i></a></span>
+        </div>
+
+      </div>
+      <div class="main-body ">
+        <div class="container">
+          <div class="row">
+            <h1>所有訂單</h1>
+            <div class="tablist mb-3">
+              <div class="nav nav-pills" id="pills-tab" role="tablist">
+                <div class="nav-item" role="presentation">
+                  <div class="nav-link active" id="pills-new-application" data-bs-toggle="pill"
+                    data-bs-target="#pills-new-application" type="button" role="tab"
+                    aria-controls="pills-new-application" aria-selected="true">新申請<span class="count"></span>
+                  </div>
+                </div>
+                <div class="nav-item" role="presentation">
+                  <div class="nav-link" id="pills-no-refund" data-bs-toggle="pill" data-bs-target="#pills-no-refund"
+                    type="button" role="tab" aria-controls="pills-no-refund" aria-selected="false">尚未退款<span
+                      class="count"></span></div>
+                </div>
+                <div class="nav-item" role="presentation">
+                  <div class="nav-link" id="pills-refunded" data-bs-toggle="pill" data-bs-target="#pills-refunded"
+                    type="button" role="tab" aria-controls="pills-refunded" aria-selected="false">已退款<span
+                      class="count"></span>
+                  </div>
+                </div>
+                <div class="nav-item" role="presentation">
+                  <div class="nav-link" id="pills-cancel-tab" data-bs-toggle="pill" data-bs-target="#pills-cancel"
+                    type="button" role="tab" aria-controls="pills-cancel" aria-selected="false">不同意退款<span
+                      class="count"></span></div>
+                </div>
+
+              </div>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-new-application" role="tabpanel"
+                aria-labelledby="pills-new-application-tab" tabindex="0">
+                <div class="no-info">
+                  <img src="./image/img-tag-empty.png" alt="">
+                  <div class="text">沒有資料</div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-no-refund" role="tabpanel" aria-labelledby="pills-no-refund-tab"
+                tabindex="0">
+                <img src="./image/img-tag-empty.png" alt="">
+                <div class="text">沒有資料</div>
+              </div>
+              <div class="tab-pane fade" id="pills-refunded" role="tabpanel" aria-labelledby="pills-refunded-tab"
+                tabindex="0">
+                <div class="refund-list-item">
+                  <div class="refund-header">
+                    <div class="header-item"><a href="#" target="_blank">#202301021945DdJx</a></div>
+                    <div class="header-item">Anita Tsai</div>
+                  </div>
+                  <div class="refund-content">
+                    <div class="g-grid-wrapper-5-7 p-12-12">
+                      <div class="g-grid-col">
+                        <div class="m-react-step-list s-vertical">
+                          <div class="m-react-step-list-item">
+                            <div class="step-wrapper">
+                              <div class="step-item s-completed">
+                                <div class="item-icon"><span class="icon g-ic-step-completed"></span></div>
+                                <div class="item-label">
+                                  <div class="refund-step-label">
+                                    <div class="label">已申請退款</div>
+                                    <div class="created-time">2023-01-04</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="step-connector">
+                                <div class="connector-line"></div>
+                                <div class="item-content">
+                                  <div class="g-font-paragraph"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="m-react-step-list-item">
+                            <div class="step-wrapper">
+                              <div class="step-item s-completed">
+                                <div class="item-icon"><span class="icon g-ic-step-completed"></span></div>
+                                <div class="item-label">
+                                  <div class="refund-step-label">
+                                    <div class="label">已同意退款</div>
+                                    <div class="created-time">2023-01-04</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="step-connector">
+                                <div class="connector-line"></div>
+                                <div class="item-content">
+                                  <div class="g-font-paragraph"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="m-react-step-list-item">
+                            <div class="step-wrapper">
+                              <div class="step-item s-completed">
+                                <div class="item-icon"><span class="icon g-ic-step-completed"></span></div>
+                                <div class="item-label">
+                                  <div class="refund-step-label">
+                                    <div class="label">已收到退貨商品</div>
+                                    <div class="created-time">2023-01-04</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="step-connector">
+                                <div class="connector-line"></div>
+                                <div class="item-content">
+                                  <div class="g-font-paragraph"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="m-react-step-list-item s-current">
+                            <div class="step-wrapper">
+                              <div class="step-item s-completed">
+                                <div class="item-icon"><span class="icon g-ic-step-completed"></span></div>
+                                <div class="item-label">
+                                  <div class="refund-step-label">
+                                    <div class="label">已完成退款</div>
+                                    <div class="created-time">2023-01-04</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="step-connector">
+                                <div class="item-content">
+                                  <div class="g-font-paragraph">
+                                    <div class="g-spacing-pt-small g-spacing-pb-small">
+                                      <ul class="completion-notes">
+                                        <li>已退款 NT$ 435 至金流帳戶</li>
+                                      </ul><a href="https://pinkoi.zendesk.com/hc/zh-tw/articles/360011633233"
+                                        target="_blank" rel="noreferrer">什麼是金流帳戶？</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="g-grid-col col-detail">
+                        <div class="g-spacing-mb-small">
+                          <div class="m-react-pane-box">
+                            <div class="wrapper g-spacing-p-medium">
+                              <div class="product-list">
+                                <div class="order-summary-product-list">
+                                  <div class="order-summary-product-list-item s-no-subtotal">
+                                    <div class="item-info">
+                                      <a href="#" target="_blank"
+                                        rel="noreferrer noopener">
+                                        <img class="product-image"
+                                          src="https://picsum.photos/200/300?grayscale">
+                                        </a>
+                                      <div class="detail">
+                                        <div class="detail-item">
+                                          <div class="specs">
+                                            <div class="specs-wrapper">
+                                              <a class="title" href="#"
+                                                target="_blank">Lorem ipsum dolor sit, amet
+                                                consectetur adipisicing elit. Aspernatur laborum vel commodi amet
+                                                officiis veniam.</a>
+                                              <div class="variation">
+                                                內容編號4
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="detail-item">
+                                          <div class="price">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="quantity">
+                                            <div class="quantity-sign">x</div>
+                                            <div class="quantity-value">1</div>
+                                      </div>
+                                    </div>
+                                    <div class="item-subtotal"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="g-grid-wrapper-6-6">
+                                <div class="g-grid-col g-text-right">
+                                  <div class="item-total">NT$ 435</div>
+                                  <div class="item-type-label g-spacing-mt-teeny">全額退款</div>
+                                </div>
+                              </div>
+                              <div class="item-refund-reason">
+                                <div class="item-heading">退款原因</div>
+                                <div class="item-text">經過雙方同意，重新下單郵寄</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-cancel" role="tabpanel" aria-labelledby="pills-cancel-tab"
+                tabindex="0">
+                <img src="./image/img-tag-empty.png" alt="">
+                <div class="text">沒有資料</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript Bundle with Popper -->
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
