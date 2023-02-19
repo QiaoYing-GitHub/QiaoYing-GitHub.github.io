@@ -1,0 +1,222 @@
+:root {
+  --main-pink: #A27F82;
+  --dark-gray: #56565E;
+  --light-gray: #D3C9C9;
+  --peach-pink: #E3A4A4;
+  --light-pink: #FEF4F6;
+}
+
+.side-menu {
+  display: none;
+}
+
+@media screen and (min-width:1200px) {
+  .coupon-setting-main .main-header .hamburger {
+    display: none;
+  }
+
+  .coupon-setting-main .main-header {
+    justify-content: end;
+  }
+
+  .coupon-setting-main .main-header .searchbar {
+    width: 35%;
+  }
+
+  .coupon-setting-main .main-header .searchbar .search-wrap {
+    display: flex;
+    width: 100%;
+
+  }
+
+  .coupon-setting-main .main-header .icons {
+    padding: 10px;
+  }
+
+
+
+}
+
+i {
+  cursor: pointer;
+}
+
+.hp-none {
+  display: none;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.required::after {
+  content: '*';
+  color: red;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #F7F7F8;
+}
+
+.coupon-setting-wrapper {
+  display: flex;
+}
+
+/* header */
+.main-header {
+  background-color: var(--peach-pink);
+  padding: 7px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.main-header .checkbox {
+  opacity: 0;
+  display: none;
+}
+
+#search-control:checked~.searchbar {
+  top: 0;
+  transition: .5s;
+}
+
+#close-search:checked~.searchbar {
+  top: -50px;
+  transition: .5s;
+}
+
+.main-header .searchbar {
+  width: 100%;
+  position: absolute;
+  padding: 7px;
+  background-color: var(--peach-pink);
+  top: -50px;
+  /* top: 0; */
+  right: 0;
+}
+
+.main-header .searchbar .btn-close {
+  border-radius: 0.375rem;
+}
+
+.main-header .searchbar button {
+  border: 1px solid #ced4da;
+}
+
+.main-header .searchbar .form-control {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.main-header .hamburger {
+  padding: 10px;
+}
+
+.main-header .icons .icon {
+  margin-left: 26px;
+}
+
+.main-header .icon,
+.main-header .icon a {
+  font-size: 18px;
+  color: var(--dark-gray);
+}
+
+/* 內容 */
+.main-body {
+  padding: 40px 40px;
+  margin: 0 auto;
+
+}
+
+.main-body .row h1 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 36px;
+  padding: 0;
+}
+
+/* 小提醒區塊 */
+.reminder {
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 24px;
+  background-color: var(--light-gray);
+}
+
+.reminder .title {
+  color: var(--dark-gray);
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.reminder ul {
+  margin-top: 6px;
+}
+
+.reminder ul li {
+  margin-top: 10px;
+  line-height: 1.5;
+  text-indent: -5px;
+  padding-left: 15px;
+}
+
+
+.reminder ul li:before {
+  width: 5px;
+  content: '•';
+  display: inline-block;
+}
+
+.reminder a {
+  color: var(--main-pink);
+}
+
+.row .text {
+  margin-bottom: 20px;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.row .create-coupon-btn {
+  width: fit-content;
+  background-color: var(--peach-pink);
+  border: none;
+}
+
+.list-state {
+  background-color: #fff;
+  margin: 24px 0;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.coupon-edit-form>div {
+  margin-bottom: 30px;
+}
+
+.input-content {
+  margin-left: 28px;
+  padding: 6px 0;
+}
+.coupon-edit-form input{
+  margin: 10px 0;
+}
+.coupon-edit-form .text{
+  font-size: 15px;
+}
+.coupon-edit-form .form-label{
+  font-weight: bold;
+  color: var(--dark-gray);
+}
