@@ -243,6 +243,7 @@ body {
   position: absolute;
   top: 0;
   width: 2px;
+  margin-left: 6px;
 }
 
 .timeline-list-item {
@@ -258,7 +259,7 @@ body {
   box-sizing: border-box;
   display: block;
   height: 14px;
-  left: -2px;
+  left: 4px;
   position: absolute;
   top: 30px;
   transform: translateY(-50%);
