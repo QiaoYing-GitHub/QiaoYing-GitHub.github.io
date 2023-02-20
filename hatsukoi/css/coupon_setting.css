@@ -137,7 +137,7 @@ body {
 
 }
 
-.main-body .row h1 {
+.main-body .row .main-title {
   font-size: 30px;
   line-height: 1.4;
   margin-bottom: 36px;
@@ -183,7 +183,7 @@ body {
 }
 
 .row .text {
-  margin-bottom: 20px;
+  margin: 15px 0;
   padding: 0;
   line-height: 1.5;
 }
@@ -210,13 +210,18 @@ body {
   margin-left: 28px;
   padding: 6px 0;
 }
-.coupon-edit-form input{
-  margin: 10px 0;
-}
+
 .coupon-edit-form .text{
   font-size: 15px;
 }
 .coupon-edit-form .form-label{
   font-weight: bold;
   color: var(--dark-gray);
+}
+.coupon-edit-form .form-check label{
+  line-height: 1.5;
+}
+
+.form-input-wrapper{
+  margin-top: 10px;
 }
