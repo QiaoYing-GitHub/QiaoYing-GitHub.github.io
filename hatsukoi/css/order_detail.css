@@ -185,9 +185,12 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-.item-icon {
+.step-finish .item-icon,
+.step-finish .connector-line{
   background-color: var(--peach-pink);
+}
+.item-icon {
+  background-color: var(--light-gray);
   border-radius: 50%;
   font-size: 14px;
   height: 32px;
@@ -223,7 +226,7 @@ body {
 }
 
 .connector-line {
-  background-color: var(--peach-pink);
+  background-color: var(--light-gray);
   height: 2px;
   vertical-align: middle;
   width: 100%;
