@@ -34,11 +34,11 @@
 
   }
 
-  .evaluate-main .main-header .icons {
-    padding: 10px;
-  }
 
 
+.evaluate-main{
+  margin-left: 250px;
+}
 }
 
 .star {
@@ -63,7 +63,7 @@ body {
   background-color: var(--peach-pink);
   padding: 7px 14px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   position: relative;
 }
@@ -75,18 +75,18 @@ body {
 
 #search-control:checked~.searchbar {
   top: 0;
-  transition: .5s;
+  transition: .3s;
 }
 
 #close-search:checked~.searchbar {
   top: -50px;
-  transition: .5s;
+  transition: .3s;
 }
 
 .main-header .searchbar {
   width: 100%;
   position: absolute;
-  padding: 7px;
+  padding: 9px;
   background-color: var(--peach-pink);
   top: -50px;
   /* top: 0; */
@@ -106,9 +106,6 @@ body {
   border-bottom-left-radius: 0.375rem;
 }
 
-.main-header .hamburger {
-  padding: 10px;
-}
 
 .main-header .icons .icon {
   margin-left: 26px;
@@ -120,6 +117,9 @@ body {
   color: var(--dark-gray);
 }
 
+.main-header .icons {
+  margin: 8px;
+}
 /* 內容 */
 .main-body {
   padding: 36px 10px;
@@ -128,7 +128,6 @@ body {
 }
 
 h1 {
-  font-weight: bold;
   font-size: 30px;
   margin-bottom: 36px;
 }

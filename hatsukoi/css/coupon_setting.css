@@ -6,14 +6,35 @@
   --light-pink: #FEF4F6;
 }
 
+ul {
+  padding: 0 !important;
+}
+
+
 .side-menu {
   display: none;
 }
 
-@media screen and (min-width:1200px) {
-  .coupon-setting-main .main-header .hamburger {
+@media screen and (min-width:768px) {
+  .table .thead {
     display: none;
+    background-color: var(--light-gray);
+    font-weight: bold;
+    padding: 14px 24px;
+    /* display: flex; */
+    font-size: 14px;
+    line-height: 1.6;
+    width: 100%;
+    align-items: center;
   }
+
+  .table .tbody .row .cell {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+
 
   .coupon-setting-main .main-header {
     justify-content: end;
@@ -29,11 +50,9 @@
 
   }
 
-  .coupon-setting-main .main-header .icons {
-    padding: 10px;
+  .coupon-setting-main {
+    margin-left: 250px;
   }
-
-
 
 }
 
@@ -73,7 +92,7 @@ body {
   background-color: var(--peach-pink);
   padding: 7px 14px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   position: relative;
 }
@@ -85,18 +104,18 @@ body {
 
 #search-control:checked~.searchbar {
   top: 0;
-  transition: .5s;
+  transition: .3s;
 }
 
 #close-search:checked~.searchbar {
   top: -50px;
-  transition: .5s;
+  transition: .3s;
 }
 
 .main-header .searchbar {
   width: 100%;
   position: absolute;
-  padding: 7px;
+  padding: 9px;
   background-color: var(--peach-pink);
   top: -50px;
   /* top: 0; */
@@ -116,9 +135,6 @@ body {
   border-bottom-left-radius: 0.375rem;
 }
 
-.main-header .hamburger {
-  padding: 10px;
-}
 
 .main-header .icons .icon {
   margin-left: 26px;
@@ -128,6 +144,10 @@ body {
 .main-header .icon a {
   font-size: 18px;
   color: var(--dark-gray);
+}
+
+.main-header .icons {
+  margin: 8px;
 }
 
 /* 內容 */
@@ -183,20 +203,29 @@ body {
 }
 
 .row .text {
-  margin: 15px 0;
+  margin-bottom: 15px;
   padding: 0;
   line-height: 1.5;
 }
 
-.row .create-coupon-btn {
-  width: fit-content;
+.row .p-btn {
+  display: block;
   background-color: var(--peach-pink);
   border: none;
+  color: #fff;
+}
+
+.row .create-btn {
+  width: fit-content;
 }
 
 .list-state {
+  padding: 0;
+}
+
+.list-empty {
   background-color: #fff;
-  margin: 24px 0;
+  margin: 25px 0;
   padding: 30px;
   text-align: center;
   width: 100%;
@@ -211,17 +240,70 @@ body {
   padding: 6px 0;
 }
 
-.coupon-edit-form .text{
+.coupon-edit-form .text {
   font-size: 15px;
 }
-.coupon-edit-form .form-label{
+
+.coupon-edit-form .form-label {
   font-weight: bold;
   color: var(--dark-gray);
 }
-.coupon-edit-form .form-check label{
+
+.coupon-edit-form .form-check label {
   line-height: 1.5;
 }
 
-.form-input-wrapper{
+
+.form-input-wrapper {
   margin-top: 10px;
+}
+
+/* ------------- */
+
+.table {
+  padding: 0;
+  margin: 25px 0;
+}
+
+.thead {
+  display: none;
+}
+
+.table .tbody>.row {
+  background-color: #fff;
+  padding: 24px;
+}
+
+.table .tbody .row:not(:last-child) {
+  border-bottom: 1px solid #d3d3d5;
+}
+
+.table .tbody .row {
+  margin: 0;
+  display: block;
+  background-color: #fff;
+  line-height: 1.6;
+  width: 100%;
+  font-size: 13px;
+}
+
+.table .tbody .cell {
+  display: flex;
+}
+
+.table .tbody .cell .title {
+  font-weight: bold;
+  display: block;
+  width: 30%;
+}
+
+.table .tbody .cell .edit {
+  color: #6975c2;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.table .tbody .cell .delete {
+  color: #e23451;
+  padding: 0;
 }
