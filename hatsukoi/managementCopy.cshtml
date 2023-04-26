@@ -1,0 +1,316 @@
+@using Hatsukoi.Models.ViewModels
+@using Hatsukoi.Repository.EntityModel;
+@model OrderStatusViewModel
+
+@{
+ViewData["Title"] = "Order Management";
+Layout = "~/Views/Shared/_Layout_Back.cshtml";
+}
+<div class="order-manager-main col-12" id="app">
+  <div class="main-body container">
+    <h1>所有訂單</h1>
+    <!-- 小提醒區塊 -->
+    <div class="reminder mb-4">
+      <div class="title">小提醒</div>
+      <ul>
+        <li>
+          設計館營收計算是以設計師按下訂單頁面中的「通知出貨」按鈕為依據，客人未按下「已收到商品」按鈕不會影響設計館營收。若客人在 60
+          天後仍未按下「已完成訂單」按鈕，系統會自動將該筆訂單分類至「已完成」。更多詳細資訊請見<a href="#">此處</a>
+        </li>
+        <li>設計館若有開發票需求，請依訂單「總金額」開立含稅發票或收據。更多詳細資訊請見<a href="#">此處</a></li>
+      </ul>
+    </div>
+    <!-- 訂單狀態列 -->
+    <div class="tablist mb-3">
+      <div class="nav nav-pills" id="pills-tab" role="tablist">
+
+        <div class="nav-item" role="presentation" onclick="dpNoneShipTab()">
+          <div class="nav-link active" data-status="notPay" id="notPay" data-bs-toggle="pill"
+            data-bs-target="#pills-notPay" type="button" role="tab" aria-controls="pills-notPay" aria-selected="true">
+            待付款<span class="count">@Model.NotPayOrders.Count</span>
+          </div>
+        </div>
+        <div class="nav-item" role="presentation">
+          <div class="nav-link " data-status="tobeshipped" id="tobeshipped" data-bs-toggle="pill"
+            data-bs-target="#pills-tobeshipped" type="button" role="tab" aria-controls="pills-tobeshipped"
+            aria-selected="true">
+            待出貨<span class="count">@Model.NotShippedOrders.Count</span>
+          </div>
+        </div>
+        <div class="nav-item" role="presentation" onclick="dpNoneShipTab()">
+          <div class="nav-link" id="shipped" data-status="shipped" data-bs-toggle="pill" data-bs-target="#pills-shipped"
+            type="button" role="tab" aria-controls="pills-shipped" aria-selected="false">
+            已出貨<span class="count">@Model.ToBeReceivedOrders.Count</span>
+          </div>
+        </div>
+        <div class="nav-item" role="presentation" onclick="dpNoneShipTab()">
+          <div class="nav-link" id="completed" data-status="completed" data-bs-toggle="pill"
+            data-bs-target="#pills-completed" type="button" role="tab" aria-controls="pills-completed"
+            aria-selected="false">
+            已完成<span class="count">@Model.CompletedOrders.Count</span>
+          </div>
+
+        </div>
+        <div class="nav-item" role="presentation" onclick="dpNoneShipTab()">
+          <div class="nav-link" id="cancel" data-status="cancel" data-bs-toggle="pill" data-bs-target="#pills-cancel"
+            type="button" role="tab" aria-controls="pills-cancel" aria-selected="false">
+            已取消<span class="count">@Model.CancelledOrders.Count</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- 工具按鈕區 -->
+    <div class="toolbar sticky">
+      <div class="wrap">
+        <div class="sides left-side dp-none">
+          <div class="toolbar-btn">
+            <input class="form-check-input" type="checkbox" id="select-all">
+            <label class="selectNum text" for="select">選取</label>
+          </div>
+          <div class="toolbar-btn ship-btn">多筆訂單出貨</div>
+
+
+        </div>
+        <div class="sides right-side">
+
+          <div class="toolbar-btn btn-select">
+            <span class="select-label">排序</span>
+            <select id="sort">
+              <option>排序</option>
+              <option value="newest">下單時間：新 → 舊</option>
+              <option value="oldest">下單時間：舊 → 新</option>
+            </select>
+          </div>
+          <div class="toolbar-label hp-none">顯示</div>
+          <div class="toolbar-btn btn-select hp-none">
+            <span class="select-label">15</span>
+            <select id="pageSizeSelect">
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </div>
+          <div class="toolbar-label hp-none">筆 / 頁</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="order-list-status my-3"> </div>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" data-status="notPay" id="pills-notPay" role="tabpanel"
+        aria-labelledby="pills-notPay-tab" tabindex="0">
+
+        <!-- 待出貨 -->
+        <div class="order-list">
+          @if (Model.NotPayOrders.Count == 0)
+          {
+          <div class="no-order">
+            <img src="~/image/order_v2.png" alt="">
+            <p>目前沒有訂單</p>
+          </div>
+          }
+          else
+          {
+          @Html.Partial("_OrderCardPartial",Model.NotPayOrders)
+
+
+          }
+
+        </div>
+
+
+      </div>
+      <div class="tab-pane fade" id="pills-tobeshipped" data-status="tobeshipped" role="tabpanel"
+        aria-labelledby="pills-tobeshipped-tab" tabindex="0">
+
+        <!-- 待出貨 -->
+        <div class="order-list">
+          @if (Model.NotShippedOrders.Count == 0)
+          {
+          <div class="no-order">
+            <img src="~/image/order_v2.png" alt="">
+            <p>目前沒有訂單</p>
+          </div>
+          }
+          else
+          {
+          @Html.Partial("_OrderCardPartial",Model.NotShippedOrders)
+          }
+
+        </div>
+
+
+      </div>
+      <div class="tab-pane fade" id="pills-shipped" data-status="shipped" role="tabpanel"
+        aria-labelledby="pills-shipped-tab" tabindex="0">
+        <!-- 已出貨訂單 -->
+        <div class="order-list">
+          @if (Model.ToBeReceivedOrders.Count == 0)
+          {
+          <div class="no-order">
+            <img src="~/image/order_v2.png" alt="">
+            <p>目前沒有訂單</p>
+          </div>
+          }
+          else
+          {
+          @Html.Partial("_OrderCardPartial",Model.ToBeReceivedOrders)
+          }
+        </div>
+      </div>
+      <div class="tab-pane fade" id="pills-completed" data-status="completed" role="tabpanel"
+        aria-labelledby="pills-completed-tab" tabindex="0">
+        <!-- 已完成訂單 -->
+        <div class="order-list">
+          <div class="order-list">
+            @if (Model.CompletedOrders.Count == 0)
+            {
+            <div class="no-order">
+              <img src="~/image/order_v2.png" alt="">
+              <p>目前沒有訂單</p>
+            </div>
+            }
+            else
+            {
+            @Html.Partial("_OrderCardPartial",Model.CompletedOrders)
+
+            }
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="pills-cancel" data-status="cancel" role="tabpanel"
+        aria-labelledby="pills-cancel-tab" tabindex="0">
+        <div class="order-list">
+          @if (Model.CancelledOrders.Count == 0)
+          {
+          <div class="no-order">
+            <img src="~/image/order_v2.png" alt="">
+            <p>目前沒有訂單</p>
+          </div>
+
+          }
+          else
+          {
+          @Html.Partial("_OrderCardPartial",Model.CancelledOrders)
+
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@section topCSS{
+<link href="~/css/order/order_management.css" rel="stylesheet" />
+}
+@section endJS{
+<script src="~/js/order/management.js"></script>
+<script>
+  let tobeshippedTab = document.querySelector('#tobeshipped')
+  let leftSideTool = document.querySelector('.left-side')
+
+
+  tobeshippedTab.addEventListener('click', event => {
+    leftSideTool.classList.remove('dp-none')
+  })
+
+  function dpNoneShipTab() {
+    leftSideTool.classList.add('dp-none')
+  }
+
+
+  //單筆訂單出貨
+  function shipOrder(orderNumber) {
+    console.log(orderNumber)
+    $.ajax({
+      url: '/api/Order/ShipOrder',
+      type: 'POST',
+      contentType: "application/json",
+      data: JSON.stringify({
+
+        orderNum: orderNumber
+
+      }),
+      success: function (data) {
+        window.location.href = "/Order/Management?status=tobeshipped"
+      }
+    });
+  }
+
+  let $selectAll = $('#select-all');
+  let $orderInputs = $('.order input[type="checkbox"]');
+  let selectNum = document.querySelector('.selectNum')
+  let $orderInputscheck = $('.order input[type="checkbox"]');
+  $selectAll.change(function () {
+    console.log('change')
+    $orderInputs.prop('checked', $selectAll.prop('checked'));
+    let $orderInputsChecked = $orderInputs.filter(':checked').length;
+    if ($orderInputsChecked > 0) {
+      selectNum.innerText = $orderInputsChecked;
+    } else {
+      selectNum.innerText = "選取";
+    }
+  });
+
+  // 訂單的checkbox
+  $orderInputs.change(function () {
+    let $orderInputsChecked = $orderInputs.filter(':checked').length;
+    if ($orderInputsChecked === $orderInputs.length) {
+      $selectAll.prop('checked', true);
+    } else {
+      $selectAll.prop('checked', false);
+    }
+
+    if ($orderInputsChecked > 0) {
+      selectNum.innerText = $orderInputsChecked;
+    } else {
+      selectNum.innerText = "選取";
+    }
+  });
+
+  //多筆訂單出貨
+  $('.ship-btn').click(function () {
+    var orderNumbers = [];
+
+    $('.order input[type="checkbox"]:checked').each(function () {
+      var orderNumber = $(this).closest('.order-info').find('.order-id').attr('id');
+      orderNumbers.push(orderNumber);
+    });
+    console.log(orderNumbers)
+    $.ajax({
+      url: '/api/Order/ShipOrders',
+      type: 'POST',
+      contentType: "application/json",
+      data: JSON.stringify({
+        orderNums: orderNumbers
+
+      }),
+      success: function (data) {
+        window.location.href = "/Order/Management?status=tobeshipped"
+      }
+    });
+
+  });
+
+  //切換到指定狀態的tab
+  function getUrlParameter(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name) || '';
+  }
+
+  //獲取當前網頁 URL 中指定名稱的查詢status參數的值
+  let orderStatus = getUrlParameter('status');
+  if (orderStatus != '') {
+    $('#notPay').removeClass('active');
+    $('#pills-notPay').removeClass('active');
+    $('.nav-link[data-status="' + orderStatus + '"]').addClass('active');
+    $('.tab-pane[data-status="' + orderStatus + '"]').addClass('active show');
+    if (orderStatus == "tobeshipped") {
+      leftSideTool.classList.remove('dp-none')
+    }
+
+  }
+</script>
+}

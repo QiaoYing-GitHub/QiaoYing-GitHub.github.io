@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue Todo List Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Vue Todo List Example</h1>
+    <form v-on:submit.prevent="addTask">
+      <label>
+        New task:
+        <input v-model="newTask" required>
+      </label>
+      <button>Add Task</button>
+    </form>
+    <ul>
+      <li v-for="task in tasks" :key="task.id">
+        <input type="checkbox" v-model="task.completed">
+        <span :class="{ completed: task.completed }">{{ task.title }}</span>
+        <button v-on:click="deleteTask(task.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        tasks: [
+          { id: 1, title: 'Learn Vue', completed: false },
+          { id: 2, title: 'Build a Todo List', completed: false },
+          { id: 3, title: 'Master Vue', completed: false },
+        ],
+        newTask: ''
+      },
+      methods: {
+        addTask: function () {
+          if (this.newTask) {
+            this.tasks.push({
+              id: Date.now(),
+              title: this.newTask,
+              completed: false
+            });
+            this.newTask = '';
+          }
+        },
+        deleteTask: function (id) {
+          this.tasks = this.tasks.filter(function (task) {
+            return task.id !== id;
+          });
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

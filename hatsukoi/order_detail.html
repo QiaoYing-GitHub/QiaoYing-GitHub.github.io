@@ -9,532 +9,497 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  
-  <!-- <link rel="stylesheet" href="./navCSS1.css"> -->
+
+  <link rel="stylesheet" href="./css/nav.css">
 
   <link rel="stylesheet" href="./css/order_detail.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="./image/favicon.ico">
 </head>
 
 <body>
-  <div class="order-detail-wrapper">
 
-    <!-- 左側選單 -->
-    <div class="side-menu col-4 col-md-2">
-      <div class="container">
-        <div class="row">
-          <input type="checkbox" id="phone-menu-control5">
-          <div>
-            <label for="phone-menu-control5" class="HB5">
-              <span></span>
-              <span></span>
-              <span></span>
-            </label>
-          </div>
+  <div class="main-header">
+    <div class="icons">
+      <input class="checkbox" type="checkbox" name="" id="search-control">
 
-          <input type="checkbox" id="open-bar5">
-          <input type="checkbox" id="order-open-bar5">
-          <input type="checkbox" id="marketing-open-bar5">
-          <input type="checkbox" id="sale-open-bar5">
-          <input type="checkbox" id="line-open-bar5">
+      <span class="icon"> <label for="search-control" class="search"><i class="fa-solid fa-magnifying-glass"></i>
+        </label></span>
 
-          <nav class="seller-nav5">
-            <div class="logo5">
-              <img src="./image/hatsukoi_icon.svg" alt="">
-              <p>設計館管理平台</p>
-            </div>
 
-            <ul class="seller-front-page5"><i class="fa-solid fa-house"></i><a href="#">首頁</a></ul>
+      <input class="checkbox" type="checkbox" name="" id="close-search">
 
-            <div class="seller-main-function5">
-              <i class="fa-solid fa-gift"></i>
-              <label for="open-bar5" class="label-open-bar5">
-                <h2>商品管理</h2>
-                <i class="fa-solid fa-chevron-up icon5"></i>
-                <ul class="seller-item5">
-                  <i class="fa-solid fa-xmark"></i>
-                  <li>商品管理</li>
-                  <li>所有商品</li>
-                  <li>主打商品</li>
-                  <li>商品自訂排序</li>
-                  <li>建立商品</li>
-                </ul>
-              </label>
+      <div class="searchbar input-group mb-3">
+        <button class="btn btn btn-light" type="button" id="button-addon2"><label for="close-search"
+            class="search"><label for="search-control" class="search"><i
+                class="fa-solid fa-xmark"></i></label></label></button>
+        <input type="text" class="form-control" placeholder="訂單編號、姓名、電話、地址、備註、商品名稱、追蹤編號"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
 
-            </div>
-
-            <div class="seller-main-function5">
-              <i class="fa-regular fa-paper-plane"></i>
-              <label for="order-open-bar5" class="label-order-open-bar5">
-                <h2>訂單管理</h2>
-                <i class="fa-solid fa-chevron-up icon5"></i>
-                <ul class="seller-item5">
-                  <i class="fa-solid fa-xmark"></i>
-                  <li>訂單管理</li>
-                  <li>所有訂單</li>
-                  <li>評價管理</li>
-                </ul>
-              </label>
-            </div>
-
-            <div class="seller-main-function5">
-              <i class="fa-regular fa-lightbulb "></i>
-              <label for="marketing-open-bar5" class="label-marketing-open-bar5">
-                <h2>行銷工具</h2>
-                <i class="fa-solid fa-chevron-up icon5"></i>
-                <ul class="seller-item5">
-                  <i class="fa-solid fa-xmark"></i>
-                  <li>行銷工具</li>
-                  <li></li>
-                </ul>
-              </label>
-            </div>
-
-            <div class="seller-main-function5">
-              <i class="fa-solid fa-sack-dollar "></i>
-              <label for="sale-open-bar5" class="label-sale-open-bar5">
-                <h2>營銷管理</h2>
-                <i class="fa-solid fa-chevron-up icon5"></i>
-                <ul class="seller-item5">
-                  <i class="fa-solid fa-xmark"></i>
-                  <li>營銷管理</li>
-                  <li>銷售狀況</li>
-                  <li>圖表</li>
-                </ul>
-              </label>
-            </div>
-
-            <div class="seller-main-function5">
-              <i class="fa-solid fa-chart-line"></i>
-              <label for="line-open-bar5" class="label-data-open-bar5">
-                <h2>數據中心</h2>
-                <i class="fa-solid fa-chevron-up icon5"></i>
-                <ul class="seller-item5 one">
-                  <i class="fa-solid fa-xmark"></i>
-                  <li>數據中心</li>
-                  <li></li>
-                </ul>
-              </label>
-            </div>
-
-          </nav>
-        </div>
+        <button class="btn btn btn-light" type="button" id="button-addon2"><i
+            class="fa-solid fa-magnifying-glass"></i></button>
       </div>
+      <span class="icon"><i class="fa-regular fa-message"></i></span>
 
+      <span class="icon"><a href=""><i class="fa-solid fa-store"></i></a></span>
     </div>
 
-    <!-- 右側功能頁 -->
-    <div class="order-detail-main col-12 col-md-10">
-      <div class="main-header">
-        <div class="icons">
-          <input class="checkbox" type="checkbox" name="" id="search-control">
-      
-          <span class="icon"> <label for="search-control" class="search"><i class="fa-solid fa-magnifying-glass"></i>
-            </label></span>
-      
-      
-          <input class="checkbox" type="checkbox" name="" id="close-search">
-      
-          <div class="searchbar input-group mb-3">
-            <button class="btn btn btn-light" type="button" id="button-addon2"><label for="close-search" class="search"><label
-                  for="search-control" class="search"><i class="fa-solid fa-xmark"></i></label></label></button>
-            <input type="text" class="form-control" placeholder="訂單編號、姓名、電話、地址、備註、商品名稱、追蹤編號" aria-label="Recipient's username"
-              aria-describedby="button-addon2">
-      
-            <button class="btn btn btn-light" type="button" id="button-addon2"><i
-                class="fa-solid fa-magnifying-glass"></i></button>
-          </div>
-          <span class="icon"><i class="fa-regular fa-message"></i></span>
-      
-          <span class="icon"><a href=""><i class="fa-solid fa-store"></i></a></span>
-        </div>
-      
+  </div>
+  <div class=" col-md-3">
+    <input type="checkbox" id="phone-menu-control5">
+    <div class="repot-HB">
+      <label for="phone-menu-control5" class="HB5">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    <input type="checkbox" id="open-bar5">
+    <input type="checkbox" id="order-open-bar5">
+    <input type="checkbox" id="marketing-open-bar5">
+    <input type="checkbox" id="sale-open-bar5">
+    <input type="checkbox" id="line-open-bar5">
+    <input type="checkbox" id="shop-open-bar5">
+    <nav class="seller-nav5">
+      <div class="logo5">
+        <img src="./image/hatsukoi_icon.svg" alt="">
+        <p>設計館管理平台</p>
       </div>
-      <div class="main-body ">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-7">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">待出貨</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">訂單編號 202302101623JYES</li>
-                </ol>
-              </nav>
-              <div class="created-time my-3">2023-01-13 21:52</div>
-              <div class="order-status-label my-3">已完成</div>
-              <!-- 運送狀態 -->
-              <div class="order-detail-card ">
-                <div class="title">
-                  運送狀態
-                </div>
-                <div class="content mt-4">
-                  <!--運送階段-->
-                  <div class="step-list">
-                    <div class="step-list-item step-finish">
-                      <div class="step-item s-completed">
-                        <div class="item-icon">
-                          <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="item-label">已出貨</div>
-                      </div>
 
-                    </div>
-                    <div class="step-list-item step-finish">
-                      <div class="step-connector ">
-                        <div class="connector-line"></div>
-                      </div>
-                      <div class="step-item s-completed">
-                        <div class="item-icon">
-                          <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="item-label">配送中</div>
-                      </div>
+      <ul class="seller-front-page5"><i class="fa-solid fa-house"></i><a href="#">首頁</a></ul>
 
-                    </div>
-                    <div class="step-list-item">
-                      <div class="step-connector">
-                        <div class="connector-line"></div>
-                      </div>
-                      <div class="step-item s-completed">
-                        <div class="item-icon">
-                          <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="item-label">已到店</div>
-                      </div>
+      <div class="seller-main-function5">
+        <i class="fa-solid fa-gift"></i>
+        <label for="open-bar5" class="label-open-bar5">
+          <h2>商品管理</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">商品管理</li>
+            <li><a href="#">所有商品</a> </li>
+            <li><a href="#">商品自訂排序</a> </li>
+            <li><a href="#">建立商品</a> </li>
 
-                    </div>
-                    <div class="step-list-item">
-                      <div class="step-connector">
-                        <div class="connector-line"></div>
-                      </div>
-                      <div class="step-item s-completed">
-                        <div class="item-icon">
-                          <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="item-label">已取貨</div>
-                      </div>
-                    </div>
+          </ul>
+        </label>
+      </div>
 
+      <div class="seller-main-function5">
+        <i class="fa-regular fa-paper-plane"></i>
+        <label for="order-open-bar5" class="label-order-open-bar5">
+          <h2>訂單管理</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">訂單管理</li>
+            <li><a href="#">所有訂單</a> </li>
+            <li><a href="#">評價管理</a> </li>
+        </label>
+      </div>
+
+      <div class="seller-main-function5">
+        <i class="fa-regular fa-lightbulb "></i>
+        <label for="marketing-open-bar5" class="label-marketing-open-bar5">
+          <h2>行銷工具</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">行銷工具</li>
+            <li><a href="#">優惠券</a> </li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="seller-main-function5">
+        <i class="fa-solid fa-sack-dollar "></i>
+        <label for="sale-open-bar5" class="label-sale-open-bar5">
+          <h2>營銷管理</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">營銷管理</li>
+            <li><a href="#">數據中心</a> </li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="seller-main-function5">
+        <i class="fa-solid fa-gear"></i>
+        <label for="shop-open-bar5" class="label-shop-open-bar5">
+          <h2>店家設定</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">基本設定</li>
+            <li><a href="#">品牌介紹</a> </li>
+            <li><a href="#">休假模式</a> </li>
+            <li><a href="#">財務設定</a> </li>
+          </ul>
+        </label>
+      </div>
+      <div class="report-user">
+        <div class="img-wrap">
+          <img src="./image/180x180.jpg" alt="">
+        </div>
+        <a class="seller-name">Afjoker</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- 右側功能頁 -->
+  <div class="order-detail-main col-12">
+
+    <div class="main-body container">
+      <div class="row">
+        <div class="col-xl-7">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">待出貨</a></li>
+              <li class="breadcrumb-item active" aria-current="page">訂單編號 202302101623JYES</li>
+            </ol>
+          </nav>
+          <div class="created-time my-3">2023-01-13 21:52</div>
+          <div class="order-status-label my-3">已完成</div>
+          <!-- 訂單狀態 -->
+          <div class="order-detail-card ">
+            <div class="title">
+              訂單狀態
+            </div>
+            <div class="content mt-4">
+              <!--運送階段-->
+              <div class="step-list">
+                <div class="step-list-item step-finish">
+                  <div class="step-item s-completed">
+                    <div class="item-icon">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div class="item-label">已出貨</div>
                   </div>
-                  <!-- 運送時間 -->
-                  <div class="timeline-list my-3">
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-18 20:02</div>
-                      <div class="item-content">名寶門市：已取件</div>
+
+                </div>
+                <div class="step-list-item step-finish">
+                  <div class="step-connector ">
+                    <div class="connector-line"></div>
+                  </div>
+                  <div class="step-item s-completed">
+                    <div class="item-icon">
+                      <i class="fa-solid fa-check"></i>
                     </div>
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-15 22:58</div>
-                      <div class="item-content">名寶門市：已到店</div>
+                    <div class="item-label">配送中</div>
+                  </div>
+
+                </div>
+                <div class="step-list-item">
+                  <div class="step-connector">
+                    <div class="connector-line"></div>
+                  </div>
+                  <div class="step-item s-completed">
+                    <div class="item-icon">
+                      <i class="fa-solid fa-check"></i>
                     </div>
-                    <div class=" timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-13 23:02</div>
-                      <div class="item-content">物流已收件（門市代碼：886875）</div>
+                    <div class="item-label">已到店</div>
+                  </div>
+
+                </div>
+                <div class="step-list-item">
+                  <div class="step-connector">
+                    <div class="connector-line"></div>
+                  </div>
+                  <div class="step-item s-completed">
+                    <div class="item-icon">
+                      <i class="fa-solid fa-check"></i>
                     </div>
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-13 23:02</div>
-                      <div class="item-content">已出貨（7-11 取貨付款 : P45510251807）</div>
+                    <div class="item-label">已取貨</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="timeline-list">
+                <div class="timeline-list-item">
+                  <div class="item-node"></div>
+                  <div class="item-header">2023-01-18 20:02</div>
+                  <div class="item-content">訂單完成</div>
+                </div>
+                <div class="timeline-list-item">
+                  <div class="item-node"></div>
+                  <div class="item-header">2023-01-18 20:02</div>
+                  <div class="item-content">完成付款</div>
+                </div>
+                <div class="timeline-list-item">
+                  <div class="item-node"></div>
+                  <div class="item-header">2023-01-18 20:02</div>
+                  <div class="item-content">收到商品</div>
+                </div>
+                <div class="timeline-list-item">
+                  <div class="item-node"></div>
+                  <div class="item-header">2023-01-15 22:58</div>
+                  <div class="item-content">商品已抵達超商</div>
+                </div>
+
+                <div class="timeline-list-item">
+                  <div class="item-node"></div>
+                  <div class="item-header">2023-01-13 23:02</div>
+                  <div class="item-content">已出貨</div>
+                </div>
+                <div class="timeline-list-item">
+                  <div class="item-node"></div>
+                  <div class="item-header">2023-01-13 21:52</div>
+                  <div class="item-content">訂單成立</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 訂單內容 -->
+          <div class="order-detail-card ">
+            <div class="title">
+              訂單內容
+            </div>
+            <div class="content mt-4">
+              <div class="order-product-list">
+                <div class="order-product-list-item  mb-5">
+                  <div class="item-info">
+                    <a href="#" target="_blank" rel="noreferrer noopener">
+                      <img class="product-image" src="https://fakeimg.pl/100x100/100" alt="">
+                    </a>
+                    <div class="specs ">
+                      <a class="product-title" href="  #" target="_blank" rel="noreferrer noopener">Lorem
+                        ipsum dolor, sit amet consectetur adipisicing elit.
+                        Optio, odio!</a>
+                      <div class="variation">Lorem</div>
                     </div>
+                    <div class="quantity">
+                      <div class="quantity-sign">x</div>
+                      <div class="quantity-value">1</div>
+                    </div>
+                  </div>
+                  <div class="item-subtotal">
+                    <span class="item-subtotal-price">NT$ 50</span>
+                  </div>
+                </div>
+                <div class="order-product-list-item mb-5">
+                  <div class="item-info">
+                    <a href="  #" target="_blank" rel="noreferrer noopener">
+                      <img class="product-image" src="https://fakeimg.pl/100x100/100" alt="">
+                    </a>
+                    <div class="specs">
+                      <a class="product-title" href="  #" target="_blank" rel="noreferrer noopener">Lorem
+                        ipsum dolor, sit amet consectetur adipisicing elit.
+                        Optio, odio!</a>
+                      <div class="variation">Lorem</div>
+                    </div>
+                    <div class="quantity">
+                      <div class="quantity-sign">x</div>
+                      <div class="quantity-value">1</div>
+                    </div>
+                  </div>
+                  <div class="item-subtotal">
+                    <span class="item-subtotal-price">NT$ 50</span>
+                  </div>
+                </div>
+                <div class="order-product-list-item mb-5">
+                  <div class="item-info">
+                    <a href="  #" target="_blank" rel="noreferrer noopener">
+                      <img class="product-image" src="https://fakeimg.pl/100x100/100" alt="">
+                    </a>
+                    <div class="specs">
+                      <a class="product-title" href="  #" target="_blank" rel="noreferrer noopener">Lorem
+                        ipsum dolor, sit amet consectetur adipisicing elit.
+                        Optio, odio!</a>
+                      <div class="variation">Lorem</div>
+                    </div>
+                    <div class="quantity">
+                      <div class="quantity-sign">x</div>
+                      <div class="quantity-value">1</div>
+                    </div>
+                  </div>
+                  <div class="item-subtotal">
+                    <span class="item-subtotal-price">NT$ 450</span>
                   </div>
                 </div>
               </div>
-              <!-- 收件人資訊 -->
-              <div class="order-detail-card ">
-                <div class="title">
-                  收件人資訊
+              <div class="order-summary-subtotals">
+                <div class="subtotal-item">
+                  <div class="item-label">小計</div>
+                  <div class="item-amount">NT$ 550</div>
                 </div>
-                <div class="content mt-4">
-                  <div class="card-info-list-item mb-2">
-                    <span class="label">收件人</span>
-                    <span class="info">一一一</span>
-                  </div>
-                  <div class="card-info-list-item mb-2">
-                    <span class="label">收件人地址</span>
-                    <span class="info">超商名稱：名寶, 超商代碼：250038</span>
-                  </div>
-                  <div class="card-info-list-item mb-2">
-                    <span class="label">收件人電話</span>
-                    <span class="info">+886912345678</span>
-                  </div>
-                  <div class="card-info-list-item mb-2">
-                    <span class="label">運送方式</span>
-                    <span class="info">7-11 取貨付款</span>
-                  </div>
+                <div class="subtotal-item">
+                  <div class="item-label">運費</div>
+                  <div class="item-amount">NT$ 60</div>
+                </div>
+                <div class="subtotal-item">
+                  <div class="item-label">金流手續費</div>
+                  <div class="item-amount">NT$ 15</div>
+                </div>
+                <div class="subtotal-item sum">
+                  <div class="item-label">總金額</div>
+                  <div class="item-amount">NT$ 625</div>
                 </div>
               </div>
-              <!-- 付款資訊 -->
-              <div class="order-detail-card ">
-                <div class="title">
-                  付款資訊
-                </div>
-                <div class="content mt-4">
-                  <div class="buyer">
-                    <div class="user-profile">
-                      <div class="img-wrap">
-                        <img src="./image/180x180.jpg" alt="">
-                      </div>
-                      <div class="user-profile-info">
-                        <div class="user-profile-name mb-2">
-                          <span>eran129</span>
-                        </div>
-                        <div class="membership mb-2">品藍會員</div>
-                        <div class="user-profile-rating">
-                          <i class="fa-solid fa-star"></i>
-                          <span class="score">5.0</span>
-                          <div class="label mx-2">買家評分</div>
-                        </div>
-                      </div>
+            </div>
+          </div>
+        </div>
+        <!-- 右側 -->
+        <div class="order-detail-right-side col-xl-5">
+          <!-- 收件人資訊 -->
+          <div class="order-detail-card ">
+            <div class="title">
+              收件人資訊
+            </div>
+            <div class="content mt-4">
+              <div class="card-info-list-item mb-2">
+                <span class="label">收件人</span>
+                <span class="info">一一一</span>
+              </div>
+              <div class="card-info-list-item mb-2">
+                <span class="label">收件人地址</span>
+                <span class="info">超商名稱：名寶, 超商代碼：250038</span>
+              </div>
+              <div class="card-info-list-item mb-2">
+                <span class="label">收件人電話</span>
+                <span class="info">+886912345678</span>
+              </div>
+              <div class="card-info-list-item mb-2">
+                <span class="label">運送方式</span>
+                <span class="info">7-11 取貨付款</span>
+              </div>
+            </div>
+          </div>
+          <!-- 付款資訊 -->
+          <div class="order-detail-card ">
+            <div class="title">
+              付款資訊
+            </div>
+            <div class="content mt-4">
+              <div class="buyer">
+                <div class="user-profile">
+                  <div class="img-wrap">
+                    <img src="./image/180x180.jpg" alt="">
+                  </div>
+                  <div class="user-profile-info">
+                    <div class="user-profile-name mb-2">
+                      <span>eran129</span>
                     </div>
-                    <div class="card-info-list-item ">
-                      <span class="label">付款方式</span>
-                      <span class="info">7-11 取貨付款</span>
+                    <div class="membership mb-2">品藍會員</div>
+                    <div class="user-profile-rating">
+                      <i class="fa-solid fa-star"></i>
+                      <span class="score">5.0</span>
+                      <div class="label mx-2">買家評分</div>
                     </div>
                   </div>
+                </div>
+                <div class="card-info-list-item ">
+                  <span class="label">付款方式</span>
+                  <span class="info">7-11 取貨付款</span>
                 </div>
               </div>
-              <!-- 訂單內容 -->
-              <div class="order-detail-card ">
-                <div class="title">
-                  訂單內容
-                </div>
-                <div class="content mt-4">
-                  <div class="order-product-list">
-                    <div class="order-product-list-item  mb-5">
-                      <div class="item-info">
-                        <a href="#" target="_blank" rel="noreferrer noopener">
-                          <img class="product-image" src="https://fakeimg.pl/100x100/100" alt="">
-                        </a>
-                        <div class="specs ">
-                          <a class="product-title" href="  #" target="_blank" rel="noreferrer noopener">Lorem
-                            ipsum dolor, sit amet consectetur adipisicing elit.
-                            Optio, odio!</a>
-                          <div class="variation">Lorem</div>
-                        </div>
-                        <div class="quantity">
-                          <div class="quantity-sign">x</div>
-                          <div class="quantity-value">1</div>
-                        </div>
-                      </div>
-                      <div class="item-subtotal">
-                        <span class="item-subtotal-price">NT$ 50</span>
-                      </div>
+            </div>
+          </div>
+          <!--賣家功能 -->
+          <div class="order-actions ">
+            <div class="ac-buyer-evaluation ac-btn" data-bs-toggle="modal" data-bs-target="#buyer-evaluation">
+              <!-- Button trigger modal -->
+              <i class="fa-regular fa-star"></i>
+              <span>給買家評分</span>
+              <!-- Modal -->
+              <div class="modal fade" id="buyer-evaluation" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div class="modal-title fs-5" id="staticBackdropLabel">給買家評分</div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="order-product-list-item mb-5">
-                      <div class="item-info">
-                        <a href="  #" target="_blank" rel="noreferrer noopener">
-                          <img class="product-image" src="https://fakeimg.pl/100x100/100" alt="">
-                        </a>
-                        <div class="specs">
-                          <a class="product-title" href="  #" target="_blank" rel="noreferrer noopener">Lorem
-                            ipsum dolor, sit amet consectetur adipisicing elit.
-                            Optio, odio!</a>
-                          <div class="variation">Lorem</div>
-                        </div>
-                        <div class="quantity">
-                          <div class="quantity-sign">x</div>
-                          <div class="quantity-value">1</div>
-                        </div>
+                    <div class="modal-body ">
+                      <div class="star mb-3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                       </div>
-                      <div class="item-subtotal">
-                        <span class="item-subtotal-price">NT$ 50</span>
+                      <!-- 想對買家說的話 -->
+                      <label class="form-label required">想對買家說的話</label>
+                      <div class="form-floating">
+                        <textarea class="form-control" id="floatingTextarea2" placeholder="你可以對買家表達感謝，或是描述此次交易的狀況"
+                          style="height: 150px"></textarea>
+                        <label for="floatingTextarea2">你可以對買家表達感謝，或是描述此次交易的狀況</label>
                       </div>
+
+                      <div class="text-count">0/700</div>
                     </div>
-                    <div class="order-product-list-item mb-5">
-                      <div class="item-info">
-                        <a href="  #" target="_blank" rel="noreferrer noopener">
-                          <img class="product-image" src="https://fakeimg.pl/100x100/100" alt="">
-                        </a>
-                        <div class="specs">
-                          <a class="product-title" href="  #" target="_blank" rel="noreferrer noopener">Lorem
-                            ipsum dolor, sit amet consectetur adipisicing elit.
-                            Optio, odio!</a>
-                          <div class="variation">Lorem</div>
-                        </div>
-                        <div class="quantity">
-                          <div class="quantity-sign">x</div>
-                          <div class="quantity-value">1</div>
-                        </div>
-                      </div>
-                      <div class="item-subtotal">
-                        <span class="item-subtotal-price">NT$ 450</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="order-summary-subtotals">
-                    <div class="subtotal-item">
-                      <div class="item-label">小計</div>
-                      <div class="item-amount">NT$ 550</div>
-                    </div>
-                    <div class="subtotal-item">
-                      <div class="item-label">運費</div>
-                      <div class="item-amount">NT$ 60</div>
-                    </div>
-                    <div class="subtotal-item">
-                      <div class="item-label">金流手續費</div>
-                      <div class="item-amount">NT$ 15</div>
-                    </div>
-                    <div class="subtotal-item sum">
-                      <div class="item-label">總金額</div>
-                      <div class="item-amount">NT$ 625</div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn" data-bs-dismiss="modal" disabled>給買家評分</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- 右側 -->
-            <div class="order-detail-right-side col-md-5">
-              <!-- 訂單歷史 -->
-              <div class="order-detail-card">
-                <div class="title">
-                  訂單歷史
-                </div>
-                <div class="content mt-4">
-                  <div class="timeline-list">
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-18 20:02</div>
-                      <div class="item-content">訂單完成</div>
+            <div class="ac-addnote ac-btn" data-bs-toggle="modal" data-bs-target="#addnote">
+              <i class="fa-regular fa-pen-to-square"></i>
+              <span>新增私下備註</span>
+              <!-- Modal -->
+              <div class="modal fade" id="addnote" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="addnote" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div class="modal-title fs-5" id="staticBackdropLabel">新增私下備註</div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-18 20:02</div>
-                      <div class="item-content">完成付款</div>
-                    </div>
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-18 20:02</div>
-                      <div class="item-content">收到商品</div>
-                    </div>
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-15 22:58</div>
-                      <div class="item-content">商品已抵達超商</div>
-                    </div>
-
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-13 23:02</div>
-                      <div class="item-content">已出貨</div>
-                    </div>
-                    <div class="timeline-list-item">
-                      <div class="item-node"></div>
-                      <div class="item-header">2023-01-13 21:52</div>
-                      <div class="item-content">訂單成立</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--賣家功能 -->
-              <div class="order-actions ">
-                <div class="ac-buyer-evaluation ac-btn" data-bs-toggle="modal" data-bs-target="#buyer-evaluation">
-                  <!-- Button trigger modal -->
-                  <i class="fa-regular fa-star"></i>
-                  <span>給買家評分</span>
-                  <!-- Modal -->
-                  <div class="modal fade" id="buyer-evaluation" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <div class="modal-title fs-5" id="staticBackdropLabel">給買家評分</div>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body ">
-                          <div class="star mb-3">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                          </div>
-                          <!-- 想對買家說的話 -->
-                          <label class="form-label required">想對買家說的話</label>
-                          <div class="form-floating">
-                            <textarea class="form-control" id="floatingTextarea2" placeholder="你可以對買家表達感謝，或是描述此次交易的狀況"
-                              style="height: 150px"></textarea>
-                            <label for="floatingTextarea2">你可以對買家表達感謝，或是描述此次交易的狀況</label>
-                          </div>
-
-                          <div class="text-count">0/700</div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn" data-bs-dismiss="modal" disabled>給買家評分</button>
-                        </div>
+                    <div class="modal-body">
+                      <div class="reminder mb-4">
+                        <div class="title">小提醒</div>
+                        <ul>
+                          <li>私下備註為設計館內部提醒與記錄使用，只提供新增與刪除的功能，最多可記錄 20 筆，買家無法看到。</li>
+                        </ul>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ac-addnote ac-btn" data-bs-toggle="modal" data-bs-target="#addnote">
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <span>新增私下備註</span>
-                  <!-- Modal -->
-                  <div class="modal fade" id="addnote" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                    aria-labelledby="addnote" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <div class="modal-title fs-5" id="staticBackdropLabel">新增私下備註</div>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <div class="reminder mb-4">
-                            <div class="title">小提醒</div>
-                            <ul>
-                              <li>私下備註為設計館內部提醒與記錄使用，只提供新增與刪除的功能，最多可記錄 20 筆，買家無法看到。</li>
-                            </ul>
-                          </div>
-                          <label class="form-label required">你想紀錄的事</label>
-                          <div class="form-floating">
-                            <textarea class="form-control" placeholder="紀錄關於訂單的相關細節" id="floatingTextarea2"
-                              style="height: 100px"></textarea>
-                            <label for="floatingTextarea2">紀錄關於訂單的相關細節</label>
-                          </div>
-
-                          <div class="text-count">0/200</div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn " data-bs-dismiss="modal" disabled>新增私下備註</button>
-                        </div>
+                      <label class="form-label required">你想紀錄的事</label>
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="紀錄關於訂單的相關細節" id="floatingTextarea2"
+                          style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">紀錄關於訂單的相關細節</label>
                       </div>
+
+                      <div class="text-count">0/200</div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn " data-bs-dismiss="modal" disabled>新增私下備註</button>
                     </div>
                   </div>
-                </div>
-                <div class="ac-connection ac-btn">
-                  <i class="fa-regular fa-comment-dots"></i>
-                  <span>聯絡買家</span>
-                </div>
-                <div class="ac-ordertab ac-btn" data-bs-toggle="modal" data-bs-target="#ordertab">
-                  <i class="fa-solid fa-tag"></i>
-                  <span>選取訂單標籤</span>
-                  <div class="modal fade" id="ordertab" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                    aria-labelledby="addnote" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <div class="modal-title fs-5" id="staticBackdropLabel">選取訂單標籤</div>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <div class="dropdown-content">
-                            <img src="./image/img-tag-empty.png" alt="">
-                            <p>目前沒有自定義標籤</p>
-                            <button type="button" class="btn btn-outline-dark">新增標籤</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
                 </div>
               </div>
             </div>
+            <div class="ac-connection ac-btn">
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>聯絡買家</span>
+            </div>
+            <div class="ac-ordertab ac-btn" data-bs-toggle="modal" data-bs-target="#ordertab">
+              <i class="fa-solid fa-tag"></i>
+              <span>選取訂單標籤</span>
+              <div class="modal fade" id="ordertab" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="addnote" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div class="modal-title fs-5" id="staticBackdropLabel">選取訂單標籤</div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="dropdown-content">
+                        <img src="./image/img-tag-empty.png" alt="">
+                        <p>目前沒有自定義標籤</p>
+                        <button type="button" class="btn btn-outline-dark">新增標籤</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+
+            </div>
           </div>
         </div>
       </div>

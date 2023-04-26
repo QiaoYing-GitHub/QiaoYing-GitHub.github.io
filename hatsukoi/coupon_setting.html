@@ -7,355 +7,437 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>優惠券設定</title>
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/nav.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/coupon_setting.css">
-
+  <link rel="icon" href="./image/favicon.ico">
   <style>
   </style>
 </head>
 
 <body>
-  <div class="coupon-setting-wrapper">
+  <div class="main-header">
+    <div class="icons">
+      <input class="checkbox" type="checkbox" name="" id="search-control">
+
+      <span class="icon"> <label for="search-control" class="search"><i class="fa-solid fa-magnifying-glass"></i>
+        </label></span>
 
 
-    <!-- 左側選單 -->
-    <div class="side-menu col-4 col-md-2">
-      <div class="container">
+      <input class="checkbox" type="checkbox" name="" id="close-search">
 
+      <div class="searchbar input-group mb-3">
+        <button class="btn btn btn-light" type="button" id="button-addon2"><label for="close-search"
+            class="search"><label for="search-control" class="search"><i
+                class="fa-solid fa-xmark"></i></label></label></button>
+        <input type="text" class="form-control" placeholder="訂單編號、姓名、電話、地址、備註、商品名稱、追蹤編號"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+
+        <button class="btn btn btn-light" type="button" id="button-addon2"><i
+            class="fa-solid fa-magnifying-glass"></i></button>
       </div>
+      <span class="icon"><i class="fa-regular fa-message"></i></span>
+
+      <span class="icon"><a href=""><i class="fa-solid fa-store"></i></a></span>
     </div>
 
-    <!-- 右側功能頁 -->
-    <div class="coupon-setting-main col-12 col-md-10">
-      <div class="main-header">
-        <div class="icons">
-          <input class="checkbox" type="checkbox" name="" id="search-control">
+  </div>
+  <div class=" col-md-3">
+    <input type="checkbox" id="phone-menu-control5">
+    <div class="repot-HB">
+      <label for="phone-menu-control5" class="HB5">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    <input type="checkbox" id="open-bar5">
+    <input type="checkbox" id="order-open-bar5">
+    <input type="checkbox" id="marketing-open-bar5">
+    <input type="checkbox" id="sale-open-bar5">
+    <input type="checkbox" id="line-open-bar5">
+    <input type="checkbox" id="shop-open-bar5">
+    <nav class="seller-nav5">
+      <div class="logo5">
+        <img src="./image/hatsukoi_icon.svg" alt="">
+        <p>設計館管理平台</p>
+      </div>
 
-          <span class="icon"> <label for="search-control" class="search"><i class="fa-solid fa-magnifying-glass"></i>
-            </label></span>
+      <ul class="seller-front-page5"><i class="fa-solid fa-house"></i><a href="#">首頁</a></ul>
 
+      <div class="seller-main-function5">
+        <i class="fa-solid fa-gift"></i>
+        <label for="open-bar5" class="label-open-bar5">
+          <h2>商品管理</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">商品管理</li>
+            <li><a href="#">所有商品</a> </li>
+            <li><a href="#">商品自訂排序</a> </li>
+            <li><a href="#">建立商品</a> </li>
 
-          <input class="checkbox" type="checkbox" name="" id="close-search">
+          </ul>
+        </label>
+      </div>
 
-          <div class="searchbar input-group mb-3">
-            <button class="btn btn btn-light" type="button" id="button-addon2"><label for="close-search"
-                class="search"><label for="search-control" class="search"><i
-                    class="fa-solid fa-xmark"></i></label></label></button>
-            <input type="text" class="form-control" placeholder="訂單編號、姓名、電話、地址、備註、商品名稱、追蹤編號"
-              aria-label="Recipient's username" aria-describedby="button-addon2">
+      <div class="seller-main-function5">
+        <i class="fa-regular fa-paper-plane"></i>
+        <label for="order-open-bar5" class="label-order-open-bar5">
+          <h2>訂單管理</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">訂單管理</li>
+            <li><a href="#">所有訂單</a> </li>
+            <li><a href="#">評價管理</a> </li>
+        </label>
+      </div>
 
-            <button class="btn btn btn-light" type="button" id="button-addon2"><i
-                class="fa-solid fa-magnifying-glass"></i></button>
+      <div class="seller-main-function5">
+        <i class="fa-regular fa-lightbulb "></i>
+        <label for="marketing-open-bar5" class="label-marketing-open-bar5">
+          <h2>行銷工具</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">行銷工具</li>
+            <li><a href="#">優惠券</a> </li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="seller-main-function5">
+        <i class="fa-solid fa-sack-dollar "></i>
+        <label for="sale-open-bar5" class="label-sale-open-bar5">
+          <h2>營銷管理</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">營銷管理</li>
+            <li><a href="#">數據中心</a> </li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="seller-main-function5">
+        <i class="fa-solid fa-gear"></i>
+        <label for="shop-open-bar5" class="label-shop-open-bar5">
+          <h2>店家設定</h2>
+          <i class="fa-solid fa-chevron-up icon5"></i>
+          <ul class="seller-item5">
+            <i class="fa-solid fa-xmark"></i>
+            <li class="title">基本設定</li>
+            <li><a href="#">品牌介紹</a> </li>
+            <li><a href="#">休假模式</a> </li>
+            <li><a href="#">財務設定</a> </li>
+          </ul>
+        </label>
+      </div>
+      <div class="report-user">
+        <div class="img-wrap">
+          <img src="./image/180x180.jpg" alt="">
+        </div>
+        <a class="seller-name">Afjoker</a>
+      </div>
+    </nav>
+  </div>
+  <!-- 右側功能頁 -->
+  <div class="coupon-setting-main col-12 ">
+    <div class="main-body container">
+      <h1 class="main-title">優惠券設定</h1>
+      <p class="text">製作不同的優惠券發送給你的社群粉絲或是朋友、熟客，能為你提高購買率。當買家下單前在購物車輸入優惠碼，就能獲得優惠。</p>
+      <!-- 小提醒區塊 -->
+      <div class="reminder mb-4">
+        <div class="title">小提醒</div>
+        <ul>
+          <li>因有提供商品折扣，我們將以「折扣後」及「扣除優惠券金額後」視為商品售價以計算管理費。更多折扣金額與成交管理費詳細資訊請見 <a href="#">設計館常見問題</a></li>
+          <li>如有設定多張自動發送的優惠券，系統會從建立時間最新的那一張開始發送。若該優惠券已失效，會依建立時間自動改發送下一張優惠券。</li>
+        </ul>
+      </div>
+      <!-- 建立優惠券 -->
+      <!-- Button trigger modal -->
+      <button type="button" class="btn p-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        建立優惠券
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">建立優惠券</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- 小提醒區塊 -->
+              <div class="reminder mb-4">
+                <div class="title">小提醒</div>
+                <ul>
+                  <li>相同的優惠碼無法重複建立喔！優惠券型式及折扣一旦設定就無法再更改，送出前請務必再次確認。</li>
+                </ul>
+              </div>
+              <div class="coupon-edit-form">
+                <div class="coupon-type">
+                  <div class="form-label">滿額優惠</div>
+                  <p>設定滿額條件及折扣</p>
+                </div>
+                <div>
+                  <div class="form-label required">優惠碼</div>
+                  <div class="form-input-wrapper">
+                    <input placeholder="設定 24 個字元以內的英文字母和數字" type="text" class="form-control" value="">
+                  </div>
+                </div>
+
+                <div>
+                  <div class="form-label required">訂單滿額條件 NT$</div>
+                  <div class="form-input-wrapper">
+                    <input placeholder="設定金額" type="text" class="form-control" value="">
+                  </div>
+                </div>
+                <div>
+                  <div class="form-label required">折扣</div>
+
+                  <select class="form-select" aria-label="Default select example">
+                    <option value="">請選擇折扣</option>
+                    <option value="5">5% off（95 折）</option>
+                    <option value="10">10% off（9 折）</option>
+                    <option value="15">15% off（85 折）</option>
+                    <option value="20">20% off（8 折）</option>
+                    <option value="25">25% off（75 折）</option>
+                    <option value="30">30% off（7 折）</option>
+                    <option value="35">35% off（65 折）</option>
+                    <option value="40">40% off（6 折）</option>
+                    <option value="45">45% off（55 折）</option>
+                  </select>
+                </div>
+                <div>
+                  <div class="form-label required">開始日期</div>
+                  <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
+                </div>
+                <div>
+                  <div class="form-label required">結束日期</div>
+                  <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
+                </div>
+                <div>
+                  <div class="form-label required">優惠券使用總次數</div>
+                  <div class="form-input-wrapper">
+                    <input placeholder="設定這張優惠券可被使用的次數" type="text" class="form-control" value="">
+                  </div>
+                  <div class="text">每筆訂單限用一次，若達使用總次數系統將會自動作廢，例如：在此欄位填入 100，被使用 100 次後，此優惠券即失效</div>
+                </div>
+                <div>
+                  <div class="form-label required">帳號使用次數</div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      1 個帳號不限使用次數
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      1 個帳號限用 1 次
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-label ">自動發送</div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      此優惠券建立後，當會員新關注你的設計館時，自動發送優惠券給會員
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+              <button type="button" class="btn p-btn">確定</button>
+            </div>
           </div>
-          <span class="icon"><i class="fa-regular fa-message"></i></span>
-
-          <span class="icon"><a href=""><i class="fa-solid fa-store"></i></a></span>
+        </div>
+      </div>
+      <!-- 優惠券清單 -->
+      <div class="list-state">
+        <!-- 沒有優惠券 -->
+        <div class="list-empty">
+          <div class="empty">沒有資料</div>
         </div>
 
       </div>
-      <div class="main-body ">
-        <div class="container">
-          <div class="row">
-            <h1 class="main-title">優惠券設定</h1>
-            <p class="text">製作不同的優惠券發送給你的社群粉絲或是朋友、熟客，能為你提高購買率。當買家下單前在購物車輸入優惠碼，就能獲得優惠。</p>
-            <!-- 小提醒區塊 -->
-            <div class="reminder mb-4">
-              <div class="title">小提醒</div>
-              <ul>
-                <li>因有提供商品折扣，我們將以「折扣後」及「扣除優惠券金額後」視為商品售價以計算管理費。更多折扣金額與成交管理費詳細資訊請見 <a href="#">設計館常見問題</a></li>
-                <li>如有設定多張自動發送的優惠券，系統會從建立時間最新的那一張開始發送。若該優惠券已失效，會依建立時間自動改發送下一張優惠券。</li>
-              </ul>
+      <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">建立優惠券</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <!-- 建立優惠券 -->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn p-btn create-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              建立優惠券
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">建立優惠券</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+              <!-- 小提醒區塊 -->
+              <div class="reminder mb-4">
+                <div class="title">小提醒</div>
+                <ul>
+                  <li>相同的優惠碼無法重複建立喔！優惠券型式及折扣一旦設定就無法再更改，送出前請務必再次確認。</li>
+                </ul>
+              </div>
+              <div class="coupon-edit-form">
+                <div class="coupon-type">
+                  <div class="form-label">滿額優惠</div>
+                  <p>設定滿額條件及折扣</p>
+                </div>
+                <div>
+                  <div class="form-label required">優惠碼</div>
+                  <div class="form-input-wrapper">
+                    <input disabled placeholder="設定 24 個字元以內的英文字母和數字" type="text" class="form-control" value="">
                   </div>
-                  <div class="modal-body">
-                    <!-- 小提醒區塊 -->
-                    <div class="reminder mb-4">
-                      <div class="title">小提醒</div>
-                      <ul>
-                        <li>相同的優惠碼無法重複建立喔！優惠券型式及折扣一旦設定就無法再更改，送出前請務必再次確認。</li>
-                      </ul>
-                    </div>
-                    <div class="coupon-edit-form">
-                      <div class="coupon-type">
-                        <div class="form-label">滿額優惠</div>
-                        <p>設定滿額條件及折扣</p>
-                      </div>
-                      <div>
-                        <div class="form-label required">優惠碼</div>
-                        <div class="form-input-wrapper">
-                          <input placeholder="設定 24 個字元以內的英文字母和數字" type="text" class="form-control" value="">
-                        </div>
-                      </div>
+                </div>
 
-                      <div>
-                        <div class="form-label required">訂單滿額條件 NT$</div>
-                        <div class="form-input-wrapper">
-                          <input placeholder="設定金額" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-                      <div>
-                        <div class="form-label required">折扣</div>
-
-                        <select class="form-select" aria-label="Default select example">
-                          <option value="">請選擇折扣</option>
-                          <option value="5">5% off（95 折）</option>
-                          <option value="10">10% off（9 折）</option>
-                          <option value="15">15% off（85 折）</option>
-                          <option value="20">20% off（8 折）</option>
-                          <option value="25">25% off（75 折）</option>
-                          <option value="30">30% off（7 折）</option>
-                          <option value="35">35% off（65 折）</option>
-                          <option value="40">40% off（6 折）</option>
-                          <option value="45">45% off（55 折）</option>
-                        </select>
-                      </div>
-                      <div>
-                        <div class="form-label required">開始日期</div>
-                        <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
-                      </div>
-                      <div>
-                        <div class="form-label required">結束日期</div>
-                        <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
-                      </div>
-                      <div>
-                        <div class="form-label required">優惠券使用總次數</div>
-                        <div class="form-input-wrapper">
-                          <input placeholder="設定這張優惠券可被使用的次數" type="text" class="form-control" value="">
-                        </div>
-                        <div class="text">每筆訂單限用一次，若達使用總次數系統將會自動作廢，例如：在此欄位填入 100，被使用 100 次後，此優惠券即失效</div>
-                      </div>
-                      <div>
-                        <div class="form-label required">帳號使用次數</div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                          <label class="form-check-label" for="flexRadioDefault1">
-                            1 個帳號不限使用次數
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                          <label class="form-check-label" for="flexRadioDefault2">
-                            1 個帳號限用 1 次
-                          </label>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="form-label ">自動發送</div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                          <label class="form-check-label" for="defaultCheck1">
-                            此優惠券建立後，當會員新關注你的設計館時，自動發送優惠券給會員
-                          </label>
-
-                        </div>
-                      </div>
-                    </div>
+                <div>
+                  <div class="form-label required">訂單滿額條件 NT$</div>
+                  <div class="form-input-wrapper">
+                    <input disabled placeholder="設定金額" type="text" class="form-control" value="">
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn p-btn">確定</button>
+                </div>
+                <div>
+                  <div class="form-label required">折扣</div>
+
+                  <select disabled class="form-select" aria-label="Default select example">
+                    <option value="">請選擇折扣</option>
+                    <option value="5">5% off（95 折）</option>
+                    <option value="10">10% off（9 折）</option>
+                    <option value="15">15% off（85 折）</option>
+                    <option value="20">20% off（8 折）</option>
+                    <option value="25">25% off（75 折）</option>
+                    <option value="30">30% off（7 折）</option>
+                    <option value="35">35% off（65 折）</option>
+                    <option value="40">40% off（6 折）</option>
+                    <option value="45">45% off（55 折）</option>
+                  </select>
+                </div>
+                <div>
+                  <div class="form-label required">開始日期</div>
+                  <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
+                </div>
+                <div>
+                  <div class="form-label required">結束日期</div>
+                  <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
+                </div>
+                <div>
+                  <div class="form-label required">優惠券使用總次數</div>
+                  <div class="form-input-wrapper">
+                    <input placeholder="設定這張優惠券可被使用的次數" type="text" class="form-control" value="">
+                  </div>
+                  <div class="text">每筆訂單限用一次，若達使用總次數系統將會自動作廢，例如：在此欄位填入 100，被使用 100 次後，此優惠券即失效</div>
+                </div>
+                <div>
+                  <div class="form-label required">帳號使用次數</div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      1 個帳號不限使用次數
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      1 個帳號限用 1 次
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-label ">自動發送</div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      此優惠券建立後，當會員新關注你的設計館時，自動發送優惠券給會員
+                    </label>
+
                   </div>
                 </div>
               </div>
             </div>
-            <!-- 優惠券清單 -->
-            <div class="list-state">
-              <!-- 沒有優惠券 -->
-              <!-- <div class="list-empty">
-                <div class="empty">沒有資料</div>
-              </div> -->
-
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+              <button type="button" class="btn p-btn">確定</button>
             </div>
-            <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">建立優惠券</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <!-- 小提醒區塊 -->
-                    <div class="reminder mb-4">
-                      <div class="title">小提醒</div>
-                      <ul>
-                        <li>相同的優惠碼無法重複建立喔！優惠券型式及折扣一旦設定就無法再更改，送出前請務必再次確認。</li>
-                      </ul>
-                    </div>
-                    <div class="coupon-edit-form">
-                      <div class="coupon-type">
-                        <div class="form-label">滿額優惠</div>
-                        <p>設定滿額條件及折扣</p>
-                      </div>
-                      <div>
-                        <div class="form-label required">優惠碼</div>
-                        <div class="form-input-wrapper">
-                          <input disabled placeholder="設定 24 個字元以內的英文字母和數字" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class="form-label required">訂單滿額條件 NT$</div>
-                        <div class="form-input-wrapper">
-                          <input disabled placeholder="設定金額" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-                      <div>
-                        <div class="form-label required">折扣</div>
-
-                        <select disabled class="form-select" aria-label="Default select example">
-                          <option value="">請選擇折扣</option>
-                          <option value="5">5% off（95 折）</option>
-                          <option value="10">10% off（9 折）</option>
-                          <option value="15">15% off（85 折）</option>
-                          <option value="20">20% off（8 折）</option>
-                          <option value="25">25% off（75 折）</option>
-                          <option value="30">30% off（7 折）</option>
-                          <option value="35">35% off（65 折）</option>
-                          <option value="40">40% off（6 折）</option>
-                          <option value="45">45% off（55 折）</option>
-                        </select>
-                      </div>
-                      <div>
-                        <div class="form-label required">開始日期</div>
-                        <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
-                      </div>
-                      <div>
-                        <div class="form-label required">結束日期</div>
-                        <input type="date" autocomplete="off" class="form-control mx-auto datepicker">
-                      </div>
-                      <div>
-                        <div class="form-label required">優惠券使用總次數</div>
-                        <div class="form-input-wrapper">
-                          <input placeholder="設定這張優惠券可被使用的次數" type="text" class="form-control" value="">
-                        </div>
-                        <div class="text">每筆訂單限用一次，若達使用總次數系統將會自動作廢，例如：在此欄位填入 100，被使用 100 次後，此優惠券即失效</div>
-                      </div>
-                      <div>
-                        <div class="form-label required">帳號使用次數</div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                          <label class="form-check-label" for="flexRadioDefault1">
-                            1 個帳號不限使用次數
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                          <label class="form-check-label" for="flexRadioDefault2">
-                            1 個帳號限用 1 次
-                          </label>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="form-label ">自動發送</div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                          <label class="form-check-label" for="defaultCheck1">
-                            此優惠券建立後，當會員新關注你的設計館時，自動發送優惠券給會員
-                          </label>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn p-btn">確定</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="table">
-              <div class="thead">
-                <div class="cell">優惠碼</div>
-                <div class="cell">型式</div>
-                <div class="cell">折扣內容</div>
-                <div class="cell">狀態</div>
-                <div class="cell"></div>
-              </div>
-              <div class="tbody">
-                <div class="row">
-                  <div class="cell">
-                    <div class="title">優惠碼</div>
-                    <div class="content">1111112</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title">型式</div>
-                    <div class="content">滿額優惠</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title">折扣內容</div>
-                    <div class="content">消費滿 NT$ 1,000，享 9 折</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title">狀態</div>
-                    <div class="content">有效</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title"></div>
-                    <div class="content">
-                      <div>
-                        <button type="button" class="btn edit" data-bs-toggle="modal" data-bs-target="#edit">編輯</button>
-                        <button class="btn delete">刪除</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="cell">
-                    <div class="title">優惠碼</div>
-                    <div class="content">1111111</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title">型式</div>
-                    <div class="content">滿額優惠</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title">折扣內容</div>
-                    <div class="content">消費滿 NT$ 1,000，享 9 折</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title">狀態</div>
-                    <div class="content">有效</div>
-                  </div>
-                  <div class="cell">
-                    <div class="title"></div>
-                    <div class="content">
-                      <div>
-                        <button type="button" class="btn edit" data-bs-toggle="modal" data-bs-target="#edit">編輯</button>
-                        <button class="btn delete">刪除</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
+      </div>
+      <div class="table">
+        <div class="thead row">
+          <div class="cell col-xl-2">優惠碼</div>
+          <div class="cell col-xl-2">型式</div>
+          <div class="cell col-xl-4">折扣內容</div>
+          <div class="cell col-xl-2">狀態</div>
+          <div class="cell col-xl-2"></div>
+        </div>
+        <div class="single-coupon row">
+          <div class="cell col-xl-2">
+            <div class="title">優惠碼</div>
+            <div class="content">1111112</div>
+          </div>
+          <div class="cell col-xl-2">
+            <div class="title">型式</div>
+            <div class="content">滿額優惠</div>
+          </div>
+          <div class="cell col-xl-4">
+            <div class="title">折扣內容</div>
+            <div class="content">消費滿 NT$ 1,000，享 9 折</div>
+          </div>
+          <div class="cell col-xl-2">
+            <div class="title">狀態</div>
+            <div class="content">有效</div>
+          </div>
+          <div class="cell col-xl-2">
+            <div class="title"></div>
+            <div class="content">
+              <div>
+                <button type="button" class="btn edit" data-bs-toggle="modal" data-bs-target="#edit">編輯</button>
+                <button class="btn delete">刪除</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-coupon row">
+          <div class="cell col-xl-2">
+            <div class="title">優惠碼</div>
+            <div class="content">1111111</div>
+          </div>
+          <div class="cell col-xl-2">
+            <div class="title">型式</div>
+            <div class="content">滿額優惠</div>
+          </div>
+          <div class="cell col-xl-4">
+            <div class="title">折扣內容</div>
+            <div class="content">消費滿 NT$ 500，享 95 折</div>
+          </div>
+          <div class="cell col-xl-2">
+            <div class="title">狀態</div>
+            <div class="content">有效</div>
+          </div>
+          <div class="cell col-xl-2">
+            <div class="title"></div>
+            <div class="content">
+              <div>
+                <button type="button" class="btn edit" data-bs-toggle="modal" data-bs-target="#edit">編輯</button>
+                <button class="btn delete">刪除</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
+
 
 
   <!-- JavaScript Bundle with Popper -->

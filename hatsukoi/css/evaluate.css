@@ -6,41 +6,6 @@
   --light-pink: #FEF4F6;
 }
 
-.side-menu {
-  display: none;
-}
-
-.required::after {
-  content: '*';
-  color: red;
-}
-
-@media screen and (min-width:1200px) {
-  .evaluate-main .main-header .hamburger {
-    display: none;
-  }
-
-  .evaluate-main .main-header {
-    justify-content: end;
-  }
-
-  .evaluate-main .main-header .searchbar {
-    width: 35%;
-  }
-
-  .evaluate-main .main-header .searchbar .search-wrap {
-    display: flex;
-    width: 100%;
-
-  }
-
-
-
-.evaluate-main{
-  margin-left: 250px;
-}
-}
-
 .star {
   color: var(--peach-pink);
 }
@@ -54,75 +19,38 @@ body {
   background-color: #F7F7F8;
 }
 
-.shop-manager-wrapper {
-  display: flex;
+
+.required::after {
+  content: '*';
+  color: red;
 }
 
-/* header */
-.main-header {
-  background-color: var(--peach-pink);
-  padding: 7px 14px;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  position: relative;
-}
+@media screen and (min-width:768px) {
+  .evaluate-main .main-header {
+    justify-content: end;
+  }
 
-.main-header .checkbox {
-  opacity: 0;
-  display: none;
-}
+  .evaluate-main .main-header .searchbar {
+    width: 35%;
+  }
 
-#search-control:checked~.searchbar {
-  top: 0;
-  transition: .3s;
-}
+  .evaluate-main .main-header .searchbar .search-wrap {
+    display: flex;
+    width: 100%;
 
-#close-search:checked~.searchbar {
-  top: -50px;
-  transition: .3s;
+  }
+.evaluate-main{
+  padding-left: 240px;
 }
-
-.main-header .searchbar {
-  width: 100%;
-  position: absolute;
-  padding: 9px;
-  background-color: var(--peach-pink);
-  top: -50px;
-  /* top: 0; */
-  right: 0;
+.evaluate-main .main-body{
+  padding: 40px;
 }
-
-.main-header .searchbar .btn-close {
-  border-radius: 0.375rem;
-}
-
-.main-header .searchbar button {
-  border: 1px solid #ced4da;
-}
-
-.main-header .searchbar .form-control {
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
 }
 
 
-.main-header .icons .icon {
-  margin-left: 26px;
-}
-
-.main-header .icon,
-.main-header .icon a {
-  font-size: 18px;
-  color: var(--dark-gray);
-}
-
-.main-header .icons {
-  margin: 8px;
-}
 /* 內容 */
 .main-body {
-  padding: 36px 10px;
+  padding: 40px 20px;
   margin: 0 auto;
 
 }
@@ -155,7 +83,7 @@ h1 {
 }
 
 .heart-list .heart-list-body .heart-option {
-  padding: 25px;
+  padding: 20px 25px;
   cursor: pointer;
 }
 

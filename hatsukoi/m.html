@@ -1,0 +1,486 @@
+@*@using Hatsukoi.Models.ViewModels
+@using Hatsukoi.Repository.EntityModel;
+@model OrderStatusViewModel*@
+
+@{
+    ViewData["Title"] = "Order Management";
+    Layout = "~/Views/Shared/_Layout_Back.cshtml";
+}
+<div class="order-manager-main col-12" id="order-management-app">
+    <div class="main-body container">
+        <h1>所有訂單</h1>
+        <!-- 小提醒區塊 -->
+        <div class="reminder mb-4">
+            <div class="title">小提醒</div>
+            <ul>
+                <li>
+                    設計館營收計算是以設計師按下訂單頁面中的「通知出貨」按鈕為依據，客人未按下「已收到商品」按鈕不會影響設計館營收。若客人在 60
+                    天後仍未按下「已完成訂單」按鈕，系統會自動將該筆訂單分類至「已完成」。更多詳細資訊請見<a href="#">此處</a>
+                </li>
+                <li>設計館若有開發票需求，請依訂單「總金額」開立含稅發票或收據。更多詳細資訊請見<a href="#">此處</a></li>
+            </ul>
+        </div>
+        <!-- 訂單狀態列 -->
+        <div class="tablist mb-3">
+            <div class="nav nav-pills" id="pills-tab" role="tablist">
+
+                <div class="nav-item" role="presentation">
+                    <div class="nav-link active" data-status="notPay" id="notPay" data-bs-toggle="pill"
+                         data-bs-target="#pills-notPay" type="button" role="tab" aria-controls="pills-notPay"
+                         aria-selected="true" @@click="isShippingTab = false">
+                        待付款<span class="count"> {{notPayListCount }} </span>
+                    </div>
+                </div>
+                <div class="nav-item" role="presentation">
+                    <div class="nav-link " data-status="tobeshipped" id="tobeshipped" data-bs-toggle="pill"
+                         data-bs-target="#pills-tobeshipped" type="button" role="tab" aria-controls="pills-tobeshipped"
+                         aria-selected="true" @@click="isShippingTab = true">
+                        待出貨<span class="count"> {{tobeshippedListCount}} </span>
+                    </div>
+                </div>
+                <div class="nav-item" role="presentation">
+                    <div class="nav-link" id="shipped" data-status="shipped" data-bs-toggle="pill" data-bs-target="#pills-shipped"
+                         type="button" role="tab" aria-controls="pills-shipped" aria-selected="false" @@click="isShippingTab = false">
+                        已出貨<span class="count"> {{toBeReceivedListCount}} </span>
+                    </div>
+                </div>
+                <div class="nav-item" role="presentation">
+                    <div class="nav-link" id="completed" data-status="completed" data-bs-toggle="pill" data-bs-target="#pills-completed"
+                         type="button" role="tab" aria-controls="pills-completed" aria-selected="false" @@click="isShippingTab = false">
+                        已完成<span class="count"> {{completedListCount}} </span>
+                    </div>
+
+                </div>
+                <div class="nav-item" role="presentation">
+                    <div class="nav-link" id="cancel" data-status="cancel" data-bs-toggle="pill" data-bs-target="#pills-cancel"
+                         type="button" role="tab" aria-controls="pills-cancel" aria-selected="false" @@click="isShippingTab = false">
+                        已取消<span class="count"> {{cancelListCount}} </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- 工具按鈕區 -->
+        <div class="toolbar sticky">
+            <div class="wrap">
+                <div :class="{'sides left-side': true,  'dp-none': !isShippingTab }">
+                    <div class="toolbar-btn">
+                        <input class="form-check-input" type="checkbox" id="select-all" v-model="selectAll" @@change="selectAllChanged">
+                        <label class="selectNum text" for="select" v-if="checkedCount == 0">選取</label>
+                        <label class="selectNum text" for="select" v-else>{{ checkedCount }}</label>
+
+                    </div>
+                    <div class="toolbar-btn ship-btn" @@click=" shipOrders">多筆訂單出貨</div>
+
+
+                </div>
+                <div class="sides right-side">
+
+                    <div class="toolbar-btn btn-select">
+                        <span class="select-label">排序</span>
+                        <select id="sort">
+                            <option>排序</option>
+                            <option value="newest">下單時間：新 → 舊</option>
+                            <option value="oldest">下單時間：舊 → 新</option>
+                        </select>
+                    </div>
+                    <div class="toolbar-label hp-none">顯示</div>
+                    <div class="toolbar-btn btn-select hp-none">
+                        <span class="select-label">15</span>
+                        <select id="pageSizeSelect">
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    <div class="toolbar-label hp-none">筆 / 頁</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="order-list-status my-3">  </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" data-status="notPay" id="pills-notPay" role="tabpanel"
+                 aria-labelledby="pills-notPay-tab" tabindex="0">
+                <div class="order-list">
+                    <div v-if="notPayListCount == 0" class="no-order">
+                        <img src="~/image/order_v2.png" alt="">
+                        <p>目前沒有訂單</p>
+                    </div>
+                    <!-- 待付款 -->
+                    <div v-else >
+                        <div v-for="order in pagedNotPayList" class="order my-4">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <!-- 訂單編號日期 -->
+                                    <label for="order-select"></label>
+                                    <div class="order-detail">
+                                        <a class="order-id mb-1" v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">{{ order.orderNumber }}</a>
+                                        <p class="date-total mb-1">
+                                            <span> {{order.createTime}} </span>
+                                            <span>NT$ {{order.totalPrice}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="order-actions">
+                                    <div class="ac-orderdetail">
+                                        <a v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-body">
+                                <div class="order-status-label mb-2">
+                                    {{order.statusText}}
+                                </div>
+                                <div class="order-item-wrap row">
+                                    <div class="order-item-list col-xl-6 py-4">
+                                        <div class="item-list-goods mb-2">
+
+                                            <div v-for="orderDetail in order.orderDetails" class="item pb-3">
+                                                <div class="item-img">
+                                                    <a><img v-bind:src="orderDetail.productImg"></a>
+                                                </div>
+                                                <div class="item-info">
+                                                    <p class="name"><a href="#">{{orderDetail.productName}}</a></p>
+                                                    <p class="spec"><a href="#">{{orderDetail.firstSepcItem}}  {{orderDetail.secondSepcItem}}</a></p>
+                                                </div>
+                                                <div class="item-quantity"><span>x {{orderDetail.quantity}}</span></div>
+                                            </div>
+
+                                            <div class="item-count">共 {{order.totalQuantity}} 件商品</div>
+                                        </div>
+                                    </div>
+                                    <div class="order-buyer-info col-xl-6 py-4">
+                                        <div class="buyer-name mb-3">{{ order.name }}</div>
+                                        <div class="recipient-info">
+                                            <p class="info-item-name mb-2">{{order.recipientName }}</p>
+                                            <p class="info-item-phone mb-2">{{order.recipientPhone}}</p>
+                                            <p class="info-item-address">{{order.recipientAddress}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <b-pagination v-model="notPayListCurrentPage" :total-rows="notPayList.length" :per-page="perPage" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="pills-tobeshipped" data-status="tobeshipped" role="tabpanel"
+                 aria-labelledby="pills-tobeshipped-tab" tabindex="0">
+                <div class="order-list">
+                    <div v-if="tobeshippedListCount == 0" class="no-order">
+                        <img src="~/image/order_v2.png" alt="">
+                        <p>目前沒有訂單</p>
+                    </div>
+                    <!-- 待出貨 -->
+                    <div v-else>
+                        <div v-for="order in pagedTobeshippedList" class="order my-4">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <!-- 訂單編號日期 -->
+
+                                    <input class="order-checkbox form-check-input mt-2" type="checkbox" v-model="order.checked" @@change="orderCheckedChanged" />
+
+                                    <label for="order-select"></label>
+                                    <div class="order-detail">
+                                        <a class="order-id mb-1" v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">{{ order.orderNumber }}</a>
+                                        <p class="date-total mb-1">
+                                            <span> {{order.createTime}} </span>
+                                            <span>NT$ {{order.totalPrice}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="order-actions">
+
+                                    <div class="ac-shippingdate">
+                                        <!-- Button trigger modal -->
+                                        <i class="fa-solid fa-truck-fast" data-bs-toggle="modal" v-bind:data-bs-target="'#shippingdate-' + order.orderNumber"></i>
+                                        <!-- Modal -->
+                                        <div class="modal fade" v-bind:id="'shippingdate-' + order.orderNumber" data-bs-backdrop="static" data-bs-keyboard="false"
+                                             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class=" modal-dialog modal-dialog-centered ">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="modal-title fs-5" id="staticBackdropLabel">通知買家出貨</div>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body ">
+                                                        <p>確認已出貨</p>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" @@click="shipOrder(order.orderNumber)">確定</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="ac-orderdetail">
+                                        <a v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="order-body">
+                                <div class="order-status-label mb-2">
+                                    {{order.statusText}}
+                                </div>
+                                <div class="order-item-wrap row">
+                                    <div class="order-item-list col-xl-6 py-4">
+                                        <div class="item-list-goods mb-2">
+
+                                            <div v-for="orderDetail in order.orderDetails" class="item pb-3">
+                                                <div class="item-img">
+                                                    <a><img v-bind:src="orderDetail.productImg"></a>
+                                                </div>
+                                                <div class="item-info">
+                                                    <p class="name"><a href="#">{{orderDetail.productName}}</a></p>
+                                                    <p class="spec"><a href="#">{{orderDetail.firstSepcItem}}  {{orderDetail.secondSepcItem}}</a></p>
+                                                </div>
+                                                <div class="item-quantity"><span>x {{orderDetail.quantity}}</span></div>
+                                            </div>
+
+                                            <div class="item-count">共 {{order.totalQuantity}} 件商品</div>
+                                        </div>
+                                    </div>
+                                    <div class="order-buyer-info col-xl-6 py-4">
+                                        <div class="buyer-name mb-3">{{ order.name }}</div>
+                                        <div class="recipient-info">
+                                            <p class="info-item-name mb-2">{{order.recipientName }}</p>
+                                            <p class="info-item-phone mb-2">{{order.recipientPhone}}</p>
+                                            <p class="info-item-address">{{order.recipientAddress}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <b-pagination v-model="tobeshippedListCurrentPage" :total-rows="tobeshippedList.length" :per-page="perPage" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="pills-shipped" data-status="shipped" role="tabpanel" aria-labelledby="pills-shipped-tab" tabindex="0">
+                <!-- 已出貨訂單 -->
+                <div class="order-list">
+
+                    <div v-if="toBeReceivedListCount == 0" class="no-order">
+                        <img src="~/image/order_v2.png" alt="">
+                        <p>目前沒有訂單</p>
+                    </div>
+                    <!-- 已出貨 -->
+                    <div v-else v-for="order in toBeReceivedList" class="order my-4">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <!-- 訂單編號日期 -->
+
+                                <label for="order-select"></label>
+                                <div class="order-detail">
+                                    <a class="order-id mb-1" v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">{{ order.orderNumber }}</a>
+                                    <p class="date-total mb-1">
+                                        <span> {{order.createTime}} </span>
+                                        <span>NT$ {{order.totalPrice}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="order-actions">
+                                <div class="ac-orderdetail">
+                                    <a v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="order-body">
+                            <div class="order-status-label mb-2">
+                                {{order.statusText}}
+                            </div>
+                            <div class="order-item-wrap row">
+                                <div class="order-item-list col-xl-6 py-4">
+                                    <div class="item-list-goods mb-2">
+
+                                        <div v-for="orderDetail in order.orderDetails" class="item pb-3">
+                                            <div class="item-img">
+                                                <a><img v-bind:src="orderDetail.productImg"></a>
+                                            </div>
+                                            <div class="item-info">
+                                                <p class="name"><a href="#">{{orderDetail.productName}}</a></p>
+                                                <p class="spec"><a href="#">{{orderDetail.firstSepcItem}}  {{orderDetail.secondSepcItem}}</a></p>
+                                            </div>
+                                            <div class="item-quantity"><span>x {{orderDetail.quantity}}</span></div>
+                                        </div>
+
+                                        <div class="item-count">共 {{order.totalQuantity}} 件商品</div>
+                                    </div>
+                                </div>
+                                <div class="order-buyer-info col-xl-6 py-4">
+                                    <div class="buyer-name mb-3">{{ order.name }}</div>
+                                    <div class="recipient-info">
+                                        <p class="info-item-name mb-2">{{order.recipientName }}</p>
+                                        <p class="info-item-phone mb-2">{{order.recipientPhone}}</p>
+                                        <p class="info-item-address">{{order.recipientAddress}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-completed" data-status="completed" role="tabpanel" aria-labelledby="pills-completed-tab"
+                 tabindex="0">
+                <!-- 已完成訂單 -->
+                <div class="order-list">
+                    <div v-if="completedListCount == 0" class="no-order">
+                        <img src="~/image/order_v2.png" alt="">
+                        <p>目前沒有訂單</p>
+                    </div>
+                    <!-- 已完成 -->
+                    <div v-else v-for="order in completedList" class="order my-4">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <!-- 訂單編號日期 -->
+
+                                <label for="order-select"></label>
+                                <div class="order-detail">
+                                    <a class="order-id mb-1" v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">{{ order.orderNumber }}</a>
+                                    <p class="date-total mb-1">
+                                        <span> {{order.createTime}} </span>
+                                        <span>NT$ {{order.totalPrice}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="order-actions">
+
+                                <div class="ac-orderdetail">
+                                    <a v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="order-body">
+                            <div class="order-status-label mb-2">
+                                {{order.statusText}}
+                            </div>
+                            <div class="order-item-wrap row">
+                                <div class="order-item-list col-xl-6 py-4">
+                                    <div class="item-list-goods mb-2">
+
+                                        <div v-for="orderDetail in order.orderDetails" class="item pb-3">
+                                            <div class="item-img">
+                                                <a><img v-bind:src="orderDetail.productImg"></a>
+                                            </div>
+                                            <div class="item-info">
+                                                <p class="name"><a href="#">{{orderDetail.productName}}</a></p>
+                                                <p class="spec"><a href="#">{{orderDetail.firstSepcItem}}  {{orderDetail.secondSepcItem}}</a></p>
+                                            </div>
+                                            <div class="item-quantity"><span>x {{orderDetail.quantity}}</span></div>
+                                        </div>
+
+                                        <div class="item-count">共 {{order.totalQuantity}} 件商品</div>
+                                    </div>
+                                </div>
+                                <div class="order-buyer-info col-xl-6 py-4">
+                                    <div class="buyer-name mb-3">{{ order.name }}</div>
+                                    <div class="recipient-info">
+                                        <p class="info-item-name mb-2">{{order.recipientName }}</p>
+                                        <p class="info-item-phone mb-2">{{order.recipientPhone}}</p>
+                                        <p class="info-item-address">{{order.recipientAddress}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-cancel" data-status="cancel" role="tabpanel" aria-labelledby="pills-cancel-tab" tabindex="0">
+                <div class="order-list">
+
+                    <div v-if="cancelListCount == 0" class="no-order">
+                        <img src="~/image/order_v2.png" alt="">
+                        <p>目前沒有訂單</p>
+                    </div>
+                    <!-- 已取消 -->
+                    <div v-else v-for="order in cancelList" class="order my-4">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <!-- 訂單編號日期 -->
+                                <label for="order-select"></label>
+                                <div class="order-detail">
+                                    <a class="order-id mb-1" v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">{{ order.orderNumber }}</a>
+                                    <p class="date-total mb-1">
+                                        <span> {{order.createTime}} </span>
+                                        <span>NT$ {{order.totalPrice}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="order-actions">
+
+                                <div class="ac-orderdetail">
+                                    <a v-bind:href="'/order/OrderDetails?orderNum='+order.orderNumber">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="order-body">
+                            <div class="order-status-label mb-2">
+                                {{order.statusText}}
+                            </div>
+                            <div class="order-item-wrap row">
+                                <div class="order-item-list col-xl-6 py-4">
+                                    <div class="item-list-goods mb-2">
+
+                                        <div v-for="orderDetail in order.orderDetails" class="item pb-3">
+                                            <div class="item-img">
+                                                <a><img v-bind:src="orderDetail.productImg"></a>
+                                            </div>
+                                            <div class="item-info">
+                                                <p class="name"><a href="#">{{orderDetail.productName}}</a></p>
+                                                <p class="spec"><a href="#">{{orderDetail.firstSepcItem}}  {{orderDetail.secondSepcItem}}</a></p>
+                                            </div>
+                                            <div class="item-quantity"><span>x {{orderDetail.quantity}}</span></div>
+                                        </div>
+
+                                        <div class="item-count">共 {{order.totalQuantity}} 件商品</div>
+                                    </div>
+                                </div>
+                                <div class="order-buyer-info col-xl-6 py-4">
+                                    <div class="buyer-name mb-3">{{ order.name }}</div>
+                                    <div class="recipient-info">
+                                        <p class="info-item-name mb-2">{{order.recipientName }}</p>
+                                        <p class="info-item-phone mb-2">{{order.recipientPhone}}</p>
+                                        <p class="info-item-address">{{order.recipientAddress}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section topCSS{
+    <link href="~/css/order/order_management.css" rel="stylesheet" />
+}
+@section endJS{
+    <script src="~/js/order/management.js"></script>
+}

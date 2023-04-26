@@ -1,0 +1,98 @@
+@using Hatsukoi.Models.ViewModels
+@using Hatsukoi.Repository.EntityModel;
+@using static Hatsukoi.Common.HatsukoiEnum;
+@model List<OrderViewModel>
+@foreach (var order in Model)
+{
+    <!-- 個別訂單 -->
+    <div class="order my-4">
+        <div class="order-header">
+            <div class="order-info">
+                <!-- 訂單編號日期 -->
+                @if (order.Status == OrderStatus.NotShipped)
+                {
+                    <input class="order-checkbox form-check-input mt-2" type="checkbox"  />
+                }
+                <label for="order-select"></label>
+                <div class="order-detail">
+                    <div class="order-id mb-1" ><a asp-controller="Order" asp-action="OrderDetails" asp-route-orderNum="@order.OrderNumber">@order.OrderNumber</a> </div>
+                    <p class="date-total mb-1">
+                        <span>@order.CreateTime</span>
+                        <span>NT$ @order.TotalPrice</span>
+                    </p>
+                </div>
+            </div>
+            <div class="order-actions">
+                @if (order.Status == OrderStatus.NotShipped)
+                {
+                    <div class="ac-shippingdate">
+                        <!-- Button trigger modal -->
+                        <i class="fa-solid fa-truck-fast" data-bs-toggle="modal" data-bs-target="#shippingdate-@order.Id"></i>
+                        <!-- Modal -->
+                        <div class="modal fade" id="shippingdate-@order.Id" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class=" modal-dialog modal-dialog-centered ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title fs-5" id="staticBackdropLabel">通知買家出貨</div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body ">
+                                      <p>確認已出貨</p>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn" data-bs-dismiss="modal" onclick="shipOrder('@order.OrderNumber')">確定</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+              
+                <div class="ac-orderdetail">
+                    <a asp-controller="Order" asp-action="OrderDetails" asp-route-orderNum="@order.OrderNumber">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="order-body">
+            <div class="order-status-label mb-2">
+                @order.StatusText
+            </div>
+            <div class="order-item-wrap row">
+                <div class="order-item-list col-xl-6 py-4">
+                    <div class="item-list-goods mb-2">
+                        @foreach (var orderDetail in order.OrderDetails)
+                        {
+                            <div class="item pb-3">
+                                <div class="item-img">
+                                    <a><img src="@orderDetail.ProductImg"></a>
+                                </div>
+                                <div class="item-info">
+                                    <p class="name"><a href="#">@orderDetail.ProductName</a></p>
+                                    <p class="spec"><a href="#">@(orderDetail.FirstSepcItem + " " + orderDetail.SecondSepcItem)</a></p>
+                                </div>
+                                <div class="item-quantity"><span>x @orderDetail.Quantity</span></div>
+                            </div>
+                        }
+                        <div class="item-count">共 @order.TotalQuantity 件商品</div>
+                    </div>
+                </div>
+                <div class="order-buyer-info col-xl-6 py-4">
+                    <div class="buyer-name mb-3">@order.Name</div>
+                    <div class="recipient-info">
+                        <p class="info-item-name mb-2">@order.RecipientName</p>
+                        <p class="info-item-phone mb-2">@order.RecipientPhone</p>
+                        <p class="info-item-address">@order.RecipientAddress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

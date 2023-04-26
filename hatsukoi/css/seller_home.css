@@ -1,0 +1,181 @@
+:root {
+  --main-pink: #A27F82;
+  --dark-gray: #56565E;
+  --light-gray: #D3C9C9;
+  --peach-pink: #E3A4A4;
+  --light-pink: #FEF4F6;
+}
+
+/* all setting */
+ul {
+  padding: 0;
+}
+
+i {
+  cursor: pointer;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.required::after {
+  content: '*';
+  color: red;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+
+body {
+  background-color: #F7F7F8;
+}
+
+@media screen and (min-width:768px) {
+  .toolbar .wrap {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+
+  .search-main {
+    padding-left: 240px;
+  }
+
+  .search-main .main-body {
+    padding: 40px;
+  }
+
+}
+
+/* 內容 */
+.main-body {
+  padding: 40px 20px;
+  margin: 0 auto;
+
+}
+
+.main-body h2 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* ------------------------- */
+.toolbar .wrap {
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  padding-top: 14px;
+  width: 100%;
+}
+
+.toolbar .wrap .right-side .toolbar-btn:last-child {
+  margin-right: 0;
+}
+
+.toolbar .toolbar-btn {
+  background: #fff;
+  border: 1px solid #d3d3d5;
+  border-radius: 2px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.toolbar .sides {
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.toolbar .btn-select {
+  position: relative;
+}
+
+.toolbar .btn-select select {
+  left: 0;
+  /* opacity: 0; */
+  position: absolute;
+  top: 20px;
+  border: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.toolbar .btn-select {
+  padding: 12px 36px 12px 12px;
+}
+
+.toolbar .btn-select .select-label {
+  position: relative;
+}
+
+.toolbar .toolbar-label {
+  padding: 12px;
+}
+
+.toolbar .btn-select .select-label:after {
+  border: 6px solid transparent;
+  border-top-color: var(--light-gray);
+  content: "";
+  margin-top: -3px;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+}
+
+.header {
+  background-color: #eae9e8;
+  padding: 14px 24px;
+}
+
+.header a {
+  display: block;
+}
+
+.body {
+  padding: 24px 24px;
+  background-color: #fff;
+}
+
+.body .user-image {
+  margin-right: 14px;
+}
+
+img {
+  height: 40px;
+  width: 40px;
+}
+
+.body .price {
+  color: #8e8e8e;
+  font-size: 12px;
+  line-height: 17px;
+}
+.main-info{
+  display: flex;
+  justify-content: space-between;
+}
+.left{
+  display: flex;
+}
+.order-status-label{
+  background-color: var(--main-pink);
+  color: #fff;
+  padding: 10px 15px;
+    border-radius: 50px;
+}
+.secondary-info{
+  display: flex;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.secondary-info .info-title{
+  margin-right: 15px;
+}
